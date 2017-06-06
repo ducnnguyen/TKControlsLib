@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "UIViewController+Popup.h"
 
 FOUNDATION_EXPORT double TKControlsLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char TKControlsLibVersionString[];

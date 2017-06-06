@@ -42,7 +42,7 @@ NSString const *TKPopupViewHandle   = @"TKPopupViewHandle";
         [fadeView addTarget:self action:@selector(tapOnBackground) forControlEvents:UIControlEventTouchUpInside];
         fadeView.frame = [UIScreen mainScreen].bounds;
         
-        fadeView.backgroundColor = RGBA1(0, 0, 0, 0.75);
+        fadeView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.75];
         fadeView.alpha = 0.f;
         [self.view addSubview:fadeView];
         self.fadeView = fadeView;
