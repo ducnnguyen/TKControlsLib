@@ -14,6 +14,7 @@
 #import "UIScrollView+UIRefreshControl.h"
 #import "UIView+ViewController.h"
 #import "UIViewController+Popup.h"
+#import "UIWindow+TopViewController.h"
 
 FOUNDATION_EXPORT double TKControlsLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char TKControlsLibVersionString[];
