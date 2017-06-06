@@ -8,6 +8,10 @@
 
 #import "NSString+Extended.h"
 
+#define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define RGBA1Color(r, g, b, a)   [UIColor colorWithRed:r green:g blue:b alpha:a]
+#define RGB255Color(r, g, b)     [UIColor colorWithRed:(float)r/255.0 green:(float)g/255.0 blue:(float)b/255.0 alpha:1.0]
+
 @implementation NSString (Extended)
 
 - (NSString *)urlencode
@@ -107,15 +111,15 @@
             if ([oldFont.fontName isEqualToString:@"TimesNewRomanPSMT"]) {
                 UIFont *tempFont = [UIFont systemFontOfSize:size];
                 [attributedString addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attributedString addAttribute:NSForegroundColorAttributeName value:HEX(0x01579b) range:range];
+                [attributedString addAttribute:NSForegroundColorAttributeName value:HEXColor(0x01579b) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
                 UIFont *tempFont = [UIFont boldSystemFontOfSize:size];
                 [attributedString addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attributedString addAttribute:NSForegroundColorAttributeName value:HEX(0x01579b) range:range];
+                [attributedString addAttribute:NSForegroundColorAttributeName value:HEXColor(0x01579b) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldItalicMT"]) {
                 UIFont *tempFont = [UIFont italicSystemFontOfSize:size];
                 [attributedString addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attributedString addAttribute:NSForegroundColorAttributeName value:HEX(0x01579b) range:range];
+                [attributedString addAttribute:NSForegroundColorAttributeName value:HEXColor(0x01579b) range:range];
             }
         }
     }];
@@ -136,7 +140,7 @@
             if ([oldFont.fontName isEqualToString:@"TimesNewRomanPSMT"]) {
                 UIFont *tempFont = [UIFont systemFontOfSize:14];
                 [attributedString addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attributedString addAttribute:NSForegroundColorAttributeName value:RGB255(122, 121, 123) range:range];
+                [attributedString addAttribute:NSForegroundColorAttributeName value:RGB255Color(122, 121, 123) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
                 UIFont *tempFont = [UIFont boldSystemFontOfSize:14];
                 [attributedString addAttribute:NSFontAttributeName value:tempFont range:range];
@@ -165,11 +169,11 @@
             if ([oldFont.fontName isEqualToString:@"TimesNewRomanPSMT"]) {
                 UIFont *tempFont = [UIFont systemFontOfSize:14];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGB255(122, 121, 123) range:range];
+                [attrStr addAttribute:NSForegroundColorAttributeName value:RGB255Color(122, 121, 123) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
                 UIFont *tempFont = [UIFont boldSystemFontOfSize:14];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGB255(255, 0, 0) range:range];
+                [attrStr addAttribute:NSForegroundColorAttributeName value:RGB255Color(255, 0, 0) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldItalicMT"]) {
                 UIFont *tempFont = [UIFont italicSystemFontOfSize:14];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
@@ -196,7 +200,7 @@
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
                 UIFont *tempFont = [UIFont boldSystemFontOfSize:oldFont.pointSize > 14.f ? oldFont.pointSize : 14.f];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGB255(255, 0, 0) range:range];
+                [attrStr addAttribute:NSForegroundColorAttributeName value:RGB255Color(255, 0, 0) range:range];
             }
         }
     }];
@@ -252,11 +256,11 @@
             if ([oldFont.fontName isEqualToString:@"TimesNewRomanPSMT"]) {
                 UIFont *tempFont = [UIFont systemFontOfSize:14];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1(0, 0, 0, 0.54) range:range];
+                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.54) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
                 UIFont *tempFont = [UIFont boldSystemFontOfSize:14];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1(0, 0, 0, 0.87) range:range];
+                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.87) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldItalicMT"]) {
                 UIFont *tempFont = [UIFont italicSystemFontOfSize:14];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
@@ -280,11 +284,11 @@
             if ([oldFont.fontName isEqualToString:@"TimesNewRomanPSMT"]) {
                 UIFont *tempFont = [UIFont systemFontOfSize:fontSize];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1(0, 0, 0, 0.54) range:range];
+                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.54) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
                 UIFont *tempFont = [UIFont boldSystemFontOfSize:fontSize];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1(0, 0, 0, 0.87) range:range];
+                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.87) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldItalicMT"]) {
                 UIFont *tempFont = [UIFont italicSystemFontOfSize:fontSize];
                 [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];

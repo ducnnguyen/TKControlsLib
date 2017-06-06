@@ -14,6 +14,8 @@
 #import "BBBadgeBarButtonItem.h"
 #import "DropdownCell.h"
 #import "MQHorizontalFlowLayout.h"
+#import "NSString+Additions.h"
+#import "NSString+Extended.h"
 #import "TDBadgedCell.h"
 #import "UIScrollView+InfiniteScroll.h"
 #import "UIScrollView+UIRefreshControl.h"
