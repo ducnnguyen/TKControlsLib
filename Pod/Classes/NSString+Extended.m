@@ -11,6 +11,7 @@
 #define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define RGBA1Color(r, g, b, a)   [UIColor colorWithRed:r green:g blue:b alpha:a]
 #define RGB255Color(r, g, b)     [UIColor colorWithRed:(float)r/255.0 green:(float)g/255.0 blue:(float)b/255.0 alpha:1.0]
+#define RGBA255Color(r, g, b, a) [UIColor colorWithRed:(float)r/255.0 green:(float)g/255.0 blue:(float)b/255.0 alpha:a]
 
 @implementation NSString (Extended)
 
@@ -144,7 +145,7 @@
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
                 UIFont *tempFont = [UIFont boldSystemFontOfSize:14];
                 [attributedString addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attributedString addAttribute:NSForegroundColorAttributeName value:RGBA255(0, 0, 0, 0.8) range:range];
+                [attributedString addAttribute:NSForegroundColorAttributeName value:RGBA255Color(0, 0, 0, 0.8) range:range];
             } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldItalicMT"]) {
                 UIFont *tempFont = [UIFont italicSystemFontOfSize:14];
                 [attributedString addAttribute:NSFontAttributeName value:tempFont range:range];
