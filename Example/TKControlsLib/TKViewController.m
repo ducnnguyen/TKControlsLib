@@ -8,6 +8,7 @@
 
 #import "TKViewController.h"
 #import <TKControlsLib/UIViewController+Popup.h>
+#import <TKControlsLib/UIView+ViewController.h>
 
 @interface TKViewController ()
 

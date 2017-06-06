@@ -18,8 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-- Refactor Tiki App
-- Move controls to Cocoapod
+Refactor Tiki App
+Move controls to Cocoapod
+Tiki App avaiable on https://itunes.apple.com/us/app/tiki-vn-niềm-vui-mua-sắm/id958100553?mt=8
                        DESC
 
   s.homepage         = 'https://github.com/ducnnguyen/TKControlsLib'

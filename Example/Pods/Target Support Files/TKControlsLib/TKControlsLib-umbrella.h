@@ -12,6 +12,7 @@
 
 #import "UIScrollView+InfiniteScroll.h"
 #import "UIScrollView+UIRefreshControl.h"
+#import "UIView+ViewController.h"
 #import "UIViewController+Popup.h"
 
 FOUNDATION_EXPORT double TKControlsLibVersionNumber;
