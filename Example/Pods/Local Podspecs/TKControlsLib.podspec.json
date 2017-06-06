@@ -1,9 +1,9 @@
 {
   "name": "TKControlsLib",
   "version": "0.1.0",
-  "summary": "A short description of TKControlsLib.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/duc.nguyen@tiki.vn/TKControlsLib",
+  "summary": "Move controls which using in Tki App to Cocoapod",
+  "description": "- Refactor Tiki App\n- Move controls to Cocoapod",
+  "homepage": "https://github.com/ducnnguyen/TKControlsLib",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,11 @@
     "duc.nguyen@tiki.vn": "duc.nguyen@tiki.vn"
   },
   "source": {
-    "git": "https://github.com/duc.nguyen@tiki.vn/TKControlsLib.git",
+    "git": "https://github.com/ducnnguyen/TKControlsLib.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "TKControlsLib/Classes/**/*"
+  "source_files": "Pod/Classes/**/*"
 }
