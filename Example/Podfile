@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TKControlsLib_Example' do
+  pod 'TKControlsLib', :path => '../'
+
+  target 'TKControlsLib_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
