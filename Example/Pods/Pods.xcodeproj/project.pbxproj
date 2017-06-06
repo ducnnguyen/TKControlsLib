@@ -1,0 +1,717 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6079C2E198BEC6D89517756FEC5F6DF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6265DE3D540D47200131156A84116B16 /* Pods-TKControlsLib_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E61EFAE2D337A3C77E1AE6A5FE202E6 /* Pods-TKControlsLib_Example-dummy.m */; };
+		75F9B0D3BBA5454D0C9BE6B074A9AF72 /* Pods-TKControlsLib_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B8C6FDDE01E0D0DBA2325D0732ED79E /* Pods-TKControlsLib_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		767EC1C6EAF156DB48C2C0DA69987A65 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7E9A3BE68FE22827DBB2035E5382C5 /* ReplaceMe.m */; };
+		87C8C006E77F4F072BEF1F30110002CD /* Pods-TKControlsLib_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C599C5E2FFBB3A3E1F47A7F55923F8 /* Pods-TKControlsLib_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DC2D728B3FFFB29CF6863F2E4AEA801 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A6637E0AD60E7A18AE6FE77474702002 /* Pods-TKControlsLib_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9842E3FAED32BCD16D250A4C5FB528 /* Pods-TKControlsLib_Tests-dummy.m */; };
+		B038DE00DC71C1A045C2778C27780D9B /* TKControlsLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B20DB192C84C05A27AFF61F80D741E0C /* TKControlsLib-dummy.m */; };
+		F935A34C12509DAE765504DED29D283A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		FD774E255E52CA86C66BE31A3FB5A668 /* TKControlsLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05044B2AA0C0E64F840436C92BD3F385 /* TKControlsLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B8E9327B61C86A48B72DCFC39896B3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3085D5DE23A6903E1D2A555A0DD420E;
+			remoteInfo = TKControlsLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05044B2AA0C0E64F840436C92BD3F385 /* TKControlsLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKControlsLib-umbrella.h"; sourceTree = "<group>"; };
+		0E514F0B80B95D7A74AD067894EFD8CF /* Pods-TKControlsLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKControlsLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		284D5E6CD13FD2D504BE7E4176B94DF1 /* TKControlsLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TKControlsLib.xcconfig; sourceTree = "<group>"; };
+		2B2DF639C8B970651E0D70BB3F429CB0 /* Pods-TKControlsLib_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKControlsLib_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2C242D2ED2ED28A770FF2E0A5D466DBA /* Pods_TKControlsLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TKControlsLib_Example.framework; path = "Pods-TKControlsLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3059C321C9D6F5D869C19DC9131AB6E1 /* TKControlsLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKControlsLib-prefix.pch"; sourceTree = "<group>"; };
+		3683F27946A9BA13A9699AF30481AB0D /* Pods-TKControlsLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TKControlsLib_Example.modulemap"; sourceTree = "<group>"; };
+		3A0DC9A16AFD42DF5FD0E1075A574C77 /* Pods_TKControlsLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TKControlsLib_Tests.framework; path = "Pods-TKControlsLib_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		582C514C3D265A4FFD5C21D1531848A8 /* Pods-TKControlsLib_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKControlsLib_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		62071D2B35F40F027557EDECF1409996 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66EA89C840F2F084317DC71B6C42916A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B8C6FDDE01E0D0DBA2325D0732ED79E /* Pods-TKControlsLib_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TKControlsLib_Tests-umbrella.h"; sourceTree = "<group>"; };
+		84C599C5E2FFBB3A3E1F47A7F55923F8 /* Pods-TKControlsLib_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TKControlsLib_Example-umbrella.h"; sourceTree = "<group>"; };
+		8E61EFAE2D337A3C77E1AE6A5FE202E6 /* Pods-TKControlsLib_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TKControlsLib_Example-dummy.m"; sourceTree = "<group>"; };
+		92CE4CE4D33124200D4094A1C4775D2D /* Pods-TKControlsLib_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKControlsLib_Tests-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AB7E9A3BE68FE22827DBB2035E5382C5 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
+		B20DB192C84C05A27AFF61F80D741E0C /* TKControlsLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TKControlsLib-dummy.m"; sourceTree = "<group>"; };
+		BB7A3F62699DFC96890F8F8D630745C1 /* TKControlsLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TKControlsLib.framework; path = TKControlsLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1665BB065495056D3C56A6AF300F63 /* Pods-TKControlsLib_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TKControlsLib_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C93EC396DC62CCF8B7308F9441F08CAD /* Pods-TKControlsLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKControlsLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CC9842E3FAED32BCD16D250A4C5FB528 /* Pods-TKControlsLib_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TKControlsLib_Tests-dummy.m"; sourceTree = "<group>"; };
+		D00E3134B26DB5A075CFA9E11BA36E35 /* Pods-TKControlsLib_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TKControlsLib_Tests.modulemap"; sourceTree = "<group>"; };
+		D11756B15A5045D19BBA8BEDDC66C496 /* Pods-TKControlsLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKControlsLib_Example.release.xcconfig"; sourceTree = "<group>"; };
+		D525C0D767177703C21FBF6FC0015461 /* Pods-TKControlsLib_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKControlsLib_Example-resources.sh"; sourceTree = "<group>"; };
+		D87262A4DEA15C5C6A543AE4281E84E7 /* TKControlsLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TKControlsLib.modulemap; sourceTree = "<group>"; };
+		DCD2A12D33BCF5E451AFD0786089BB19 /* Pods-TKControlsLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKControlsLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE4C0F64C4AF0A53085EC01CEF0661E6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3E7627B8A1C6C65A82E68ACA0A8AA54 /* Pods-TKControlsLib_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TKControlsLib_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FB53DCCCAB06574F37273D9AFD7DA6D9 /* Pods-TKControlsLib_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TKControlsLib_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FED54237AAB01E22E3473BE0F7363B8F /* Pods-TKControlsLib_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TKControlsLib_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69092CDB8ADC890D6B78C9438818088F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6079C2E198BEC6D89517756FEC5F6DF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4A1EBB1EEB81FBBD210BAE7A04114EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F935A34C12509DAE765504DED29D283A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E178EC659DE0FDFA979B8348C0A95DA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2D728B3FFFB29CF6863F2E4AEA801 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A050605B0BB4670AA049F268B752DE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C242D2ED2ED28A770FF2E0A5D466DBA /* Pods_TKControlsLib_Example.framework */,
+				3A0DC9A16AFD42DF5FD0E1075A574C77 /* Pods_TKControlsLib_Tests.framework */,
+				BB7A3F62699DFC96890F8F8D630745C1 /* TKControlsLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A5588270151203431848BA7E9B8B690 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AB7E9A3BE68FE22827DBB2035E5382C5 /* ReplaceMe.m */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		34D9226AA8E85671B68EEF90204797F2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93FAAAA15EB6D9626D67DAC5B5101955 /* TKControlsLib */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		72B1C336C46808E32C1951F3BFA0D8F8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FAE2D4975F973E97B7F75B001380BA9 /* Pods-TKControlsLib_Example */,
+				CD7BE0B3915885B7BD0C6A1FB7D3BAB9 /* Pods-TKControlsLib_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				34D9226AA8E85671B68EEF90204797F2 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				2A050605B0BB4670AA049F268B752DE0 /* Products */,
+				72B1C336C46808E32C1951F3BFA0D8F8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		91FAB439180697C057CC3077C9F289CA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				62071D2B35F40F027557EDECF1409996 /* Info.plist */,
+				D87262A4DEA15C5C6A543AE4281E84E7 /* TKControlsLib.modulemap */,
+				284D5E6CD13FD2D504BE7E4176B94DF1 /* TKControlsLib.xcconfig */,
+				B20DB192C84C05A27AFF61F80D741E0C /* TKControlsLib-dummy.m */,
+				3059C321C9D6F5D869C19DC9131AB6E1 /* TKControlsLib-prefix.pch */,
+				05044B2AA0C0E64F840436C92BD3F385 /* TKControlsLib-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TKControlsLib";
+			sourceTree = "<group>";
+		};
+		93FAAAA15EB6D9626D67DAC5B5101955 /* TKControlsLib */ = {
+			isa = PBXGroup;
+			children = (
+				91FAB439180697C057CC3077C9F289CA /* Support Files */,
+				ED4A709E4C404DD13F0A9B07E2D291FE /* TKControlsLib */,
+			);
+			name = TKControlsLib;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		9FAE2D4975F973E97B7F75B001380BA9 /* Pods-TKControlsLib_Example */ = {
+			isa = PBXGroup;
+			children = (
+				66EA89C840F2F084317DC71B6C42916A /* Info.plist */,
+				3683F27946A9BA13A9699AF30481AB0D /* Pods-TKControlsLib_Example.modulemap */,
+				FB53DCCCAB06574F37273D9AFD7DA6D9 /* Pods-TKControlsLib_Example-acknowledgements.markdown */,
+				FED54237AAB01E22E3473BE0F7363B8F /* Pods-TKControlsLib_Example-acknowledgements.plist */,
+				8E61EFAE2D337A3C77E1AE6A5FE202E6 /* Pods-TKControlsLib_Example-dummy.m */,
+				2B2DF639C8B970651E0D70BB3F429CB0 /* Pods-TKControlsLib_Example-frameworks.sh */,
+				D525C0D767177703C21FBF6FC0015461 /* Pods-TKControlsLib_Example-resources.sh */,
+				84C599C5E2FFBB3A3E1F47A7F55923F8 /* Pods-TKControlsLib_Example-umbrella.h */,
+				C93EC396DC62CCF8B7308F9441F08CAD /* Pods-TKControlsLib_Example.debug.xcconfig */,
+				D11756B15A5045D19BBA8BEDDC66C496 /* Pods-TKControlsLib_Example.release.xcconfig */,
+			);
+			name = "Pods-TKControlsLib_Example";
+			path = "Target Support Files/Pods-TKControlsLib_Example";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD7BE0B3915885B7BD0C6A1FB7D3BAB9 /* Pods-TKControlsLib_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C0F64C4AF0A53085EC01CEF0661E6 /* Info.plist */,
+				D00E3134B26DB5A075CFA9E11BA36E35 /* Pods-TKControlsLib_Tests.modulemap */,
+				E3E7627B8A1C6C65A82E68ACA0A8AA54 /* Pods-TKControlsLib_Tests-acknowledgements.markdown */,
+				BE1665BB065495056D3C56A6AF300F63 /* Pods-TKControlsLib_Tests-acknowledgements.plist */,
+				CC9842E3FAED32BCD16D250A4C5FB528 /* Pods-TKControlsLib_Tests-dummy.m */,
+				582C514C3D265A4FFD5C21D1531848A8 /* Pods-TKControlsLib_Tests-frameworks.sh */,
+				92CE4CE4D33124200D4094A1C4775D2D /* Pods-TKControlsLib_Tests-resources.sh */,
+				7B8C6FDDE01E0D0DBA2325D0732ED79E /* Pods-TKControlsLib_Tests-umbrella.h */,
+				DCD2A12D33BCF5E451AFD0786089BB19 /* Pods-TKControlsLib_Tests.debug.xcconfig */,
+				0E514F0B80B95D7A74AD067894EFD8CF /* Pods-TKControlsLib_Tests.release.xcconfig */,
+			);
+			name = "Pods-TKControlsLib_Tests";
+			path = "Target Support Files/Pods-TKControlsLib_Tests";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		ED4A709E4C404DD13F0A9B07E2D291FE /* TKControlsLib */ = {
+			isa = PBXGroup;
+			children = (
+				2A5588270151203431848BA7E9B8B690 /* Classes */,
+			);
+			name = TKControlsLib;
+			path = TKControlsLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		11E3E3426944392ABDD7964745E7CB10 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C8C006E77F4F072BEF1F30110002CD /* Pods-TKControlsLib_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122094B278C38D030BAFC9F3AF708778 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD774E255E52CA86C66BE31A3FB5A668 /* TKControlsLib-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F526C9CAE2F6BE0DB84E42FEB33564 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75F9B0D3BBA5454D0C9BE6B074A9AF72 /* Pods-TKControlsLib_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C9FA2972111E58A85D590EF1DF2AD102 /* Pods-TKControlsLib_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0C5F1658278D47DE231DB82A02CB97A /* Build configuration list for PBXNativeTarget "Pods-TKControlsLib_Tests" */;
+			buildPhases = (
+				BE5CC94331CB63849BBBF1AC478A7A31 /* Sources */,
+				D4A1EBB1EEB81FBBD210BAE7A04114EE /* Frameworks */,
+				E4F526C9CAE2F6BE0DB84E42FEB33564 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TKControlsLib_Tests";
+			productName = "Pods-TKControlsLib_Tests";
+			productReference = 3A0DC9A16AFD42DF5FD0E1075A574C77 /* Pods_TKControlsLib_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D3085D5DE23A6903E1D2A555A0DD420E /* TKControlsLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EED823DB3A536D402F82D1A78671BA9 /* Build configuration list for PBXNativeTarget "TKControlsLib" */;
+			buildPhases = (
+				FEBB5BD5CCE6F310D93EDB4C7A0B9251 /* Sources */,
+				69092CDB8ADC890D6B78C9438818088F /* Frameworks */,
+				122094B278C38D030BAFC9F3AF708778 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKControlsLib;
+			productName = TKControlsLib;
+			productReference = BB7A3F62699DFC96890F8F8D630745C1 /* TKControlsLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DDACF3DC8DD13E955E7FF61E0CFFD975 /* Pods-TKControlsLib_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9403CF2DF1AFCE0BE07444B4BCCFBD72 /* Build configuration list for PBXNativeTarget "Pods-TKControlsLib_Example" */;
+			buildPhases = (
+				C97BD104DC63FC27A4C2A0B7D2D78BC3 /* Sources */,
+				E178EC659DE0FDFA979B8348C0A95DA5 /* Frameworks */,
+				11E3E3426944392ABDD7964745E7CB10 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD5F55C6B2F5FEFFA71C3AFC6DD07AA3 /* PBXTargetDependency */,
+			);
+			name = "Pods-TKControlsLib_Example";
+			productName = "Pods-TKControlsLib_Example";
+			productReference = 2C242D2ED2ED28A770FF2E0A5D466DBA /* Pods_TKControlsLib_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2A050605B0BB4670AA049F268B752DE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDACF3DC8DD13E955E7FF61E0CFFD975 /* Pods-TKControlsLib_Example */,
+				C9FA2972111E58A85D590EF1DF2AD102 /* Pods-TKControlsLib_Tests */,
+				D3085D5DE23A6903E1D2A555A0DD420E /* TKControlsLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE5CC94331CB63849BBBF1AC478A7A31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6637E0AD60E7A18AE6FE77474702002 /* Pods-TKControlsLib_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97BD104DC63FC27A4C2A0B7D2D78BC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6265DE3D540D47200131156A84116B16 /* Pods-TKControlsLib_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBB5BD5CCE6F310D93EDB4C7A0B9251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767EC1C6EAF156DB48C2C0DA69987A65 /* ReplaceMe.m in Sources */,
+				B038DE00DC71C1A045C2778C27780D9B /* TKControlsLib-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD5F55C6B2F5FEFFA71C3AFC6DD07AA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TKControlsLib;
+			target = D3085D5DE23A6903E1D2A555A0DD420E /* TKControlsLib */;
+			targetProxy = 6B8E9327B61C86A48B72DCFC39896B3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		13FD6D4C7CA23125D130C6059A3AF00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 284D5E6CD13FD2D504BE7E4176B94DF1 /* TKControlsLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TKControlsLib/TKControlsLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TKControlsLib/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TKControlsLib/TKControlsLib.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TKControlsLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		68D2BD0B43A66BCA4233C215AFDB6BEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11756B15A5045D19BBA8BEDDC66C496 /* Pods-TKControlsLib_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TKControlsLib_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TKControlsLib_Example/Pods-TKControlsLib_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TKControlsLib_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E17F2D50FE23D91C488DA2366CA89AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 284D5E6CD13FD2D504BE7E4176B94DF1 /* TKControlsLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TKControlsLib/TKControlsLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TKControlsLib/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TKControlsLib/TKControlsLib.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TKControlsLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA228A07BE64DDFA1A6217AA105042ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCD2A12D33BCF5E451AFD0786089BB19 /* Pods-TKControlsLib_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TKControlsLib_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TKControlsLib_Tests/Pods-TKControlsLib_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TKControlsLib_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D8DBD81809C9D84CED728D9C91C79CC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C93EC396DC62CCF8B7308F9441F08CAD /* Pods-TKControlsLib_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TKControlsLib_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TKControlsLib_Example/Pods-TKControlsLib_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TKControlsLib_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E8547CC76B436496EA030F312552DD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E514F0B80B95D7A74AD067894EFD8CF /* Pods-TKControlsLib_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TKControlsLib_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TKControlsLib_Tests/Pods-TKControlsLib_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TKControlsLib_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EED823DB3A536D402F82D1A78671BA9 /* Build configuration list for PBXNativeTarget "TKControlsLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E17F2D50FE23D91C488DA2366CA89AB /* Debug */,
+				13FD6D4C7CA23125D130C6059A3AF00E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9403CF2DF1AFCE0BE07444B4BCCFBD72 /* Build configuration list for PBXNativeTarget "Pods-TKControlsLib_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8DBD81809C9D84CED728D9C91C79CC3 /* Debug */,
+				68D2BD0B43A66BCA4233C215AFDB6BEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0C5F1658278D47DE231DB82A02CB97A /* Build configuration list for PBXNativeTarget "Pods-TKControlsLib_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA228A07BE64DDFA1A6217AA105042ED /* Debug */,
+				E8547CC76B436496EA030F312552DD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,16 @@
+PODS:
+  - TKControlsLib (0.1.0)
+
+DEPENDENCIES:
+  - TKControlsLib (from `../`)
+
+EXTERNAL SOURCES:
+  TKControlsLib:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TKControlsLib: 444190934eb0eb5ac4007b4d146f6928f4458951
+
+PODFILE CHECKSUM: 343962f6dd8db6d01c1be07b66c46b96a740cae9
+
+COCOAPODS: 1.2.1
