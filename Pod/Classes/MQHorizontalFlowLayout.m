@@ -8,7 +8,7 @@
 
 #import "MQHorizontalFlowLayout.h"
 
-/**
+/*
  * CollectionViewLayout for an horizontal flow type:
  *
  *  |--marginx--  0  1  2  ---marginx--|

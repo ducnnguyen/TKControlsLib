@@ -38,7 +38,7 @@
 - (void)initializer
 {
     // Default design initialization
-    self.badgeBGColor   = RGB255(253, 130, 10);
+    self.badgeBGColor   = [UIColor colorWithRed:253.f/255 green:130.f/255 blue:10.f/255 alpha:1];
     self.badgeTextColor = [UIColor whiteColor];
     self.badgeFont      = [UIFont systemFontOfSize:10.0];
     self.badgePadding   = 6;

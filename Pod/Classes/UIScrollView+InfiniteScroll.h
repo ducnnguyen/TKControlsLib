@@ -13,17 +13,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIScrollView (InfiniteScroll)
 
-/**
+/*
  *  Flag that indicates whether infinite scroll is animating
  */
 @property (nonatomic, readonly, getter=isAnimatingInfiniteScroll) BOOL animatingInfiniteScroll;
 
-/**
+/*
  *  Infinite scroll activity indicator style (default: UIActivityIndicatorViewStyleGray on iOS, UIActivityIndicatorViewStyleWhite on tvOS)
  */
 @property (nonatomic) UIActivityIndicatorViewStyle infiniteScrollIndicatorStyle;
 
-/**
+/*
  *  Infinite indicator view
  *
  *  You can set your own custom view instead of default activity indicator, 
@@ -36,37 +36,37 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, nullable) UIView *infiniteScrollIndicatorView;
 
-/**
+/*
  *  Vertical margin around indicator view (Default: 11)
  */
 @property (nonatomic) CGFloat infiniteScrollIndicatorMargin;
 
-/**
+/*
  *  Sets the offset between the real end of the scroll view content and the scroll position, so the handler can be triggered before reaching end.
  *  Defaults to 0.0;
  */
 @property (nonatomic) CGFloat infiniteScrollTriggerOffset;
 
-/**
+/*
  *  Setup infinite scroll handler
  *
  *  @param handler a handler block
  */
 - (void)addInfiniteScrollWithHandler:(void(^)(UIScrollView *scrollView))handler;
 
-/**
+/*
  *  Set a handler to be called to check if the infinite scroll should be shown
  *
  *  @param handler a handler block
  */
 - (void)setShouldShowInfiniteScrollHandler:(nullable BOOL(^)(UIScrollView *scrollView))handler;
 
-/**
+/*
  *  Unregister infinite scroll
  */
 - (void)removeInfiniteScroll;
 
-/**
+/*
  *  Finish infinite scroll animations
  *
  *  You must call this method from your infinite scroll handler to finish all
@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)finishInfiniteScrollWithCompletion:(nullable void(^)(UIScrollView *scrollView))handler;
 
-/**
+/*
  *  Finish infinite scroll animations
  *
  *  You must call this method from your infinite scroll handler to finish all

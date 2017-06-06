@@ -32,12 +32,12 @@ Tiki App avaiable on https://itunes.apple.com/us/app/tiki-vn-niềm-vui-mua-sắ
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'Pod/Classes/*/*'
   
   # s.resource_bundles = {
   #   'TKControlsLib' => ['TKControlsLib/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_header_files = 'Pod/Classes/*/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
 end

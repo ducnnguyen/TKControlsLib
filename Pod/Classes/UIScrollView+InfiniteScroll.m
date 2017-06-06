@@ -29,7 +29,7 @@ static void PBSwizzleMethod(Class c, SEL original, SEL alternate) {
     }
 }
 
-/**
+/*
  *  A helper function to force table view to update its content size
  *
  *  See https://github.com/pronebird/UIScrollView-InfiniteScroll/issues/31
@@ -48,60 +48,60 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
 #pragma mark - Infinite scroll state
 #pragma mark -
 
-/**
+/*
  *  Infinite scroll state class.
  *  @private
  */
 @interface _PBInfiniteScrollState : NSObject
 
-/**
+/*
  *  A flag that indicates whether scroll is initialized
  */
 @property (nonatomic) BOOL initialized;
 
-/**
+/*
  *  A flag that indicates whether loading is in progress.
  */
 @property (nonatomic) BOOL loading;
 
-/**
+/*
  *  Indicator view.
  */
 @property (nonatomic) UIView *indicatorView;
 
-/**
+/*
  *  Indicator style when UIActivityIndicatorView used.
  */
 @property (nonatomic) UIActivityIndicatorViewStyle indicatorStyle;
 
-/**
+/*
  *  Extra padding to push indicator view below view bounds.
  *  Used in case when content size is smaller than view bounds
  */
 @property (nonatomic) CGFloat extraBottomInset;
 
-/**
+/*
  *  Indicator view inset.
  *  Essentially is equal to indicator view height.
  */
 @property (nonatomic) CGFloat indicatorInset;
 
-/**
+/*
  *  Indicator view margin (top and bottom)
  */
 @property (nonatomic) CGFloat indicatorMargin;
 
-/**
+/*
  *  Trigger offset.
  */
 @property (nonatomic) CGFloat triggerOffset;
 
-/**
+/*
  *  Infinite scroll handler block
  */
 @property (nonatomic, copy) void(^infiniteScrollHandler)(id scrollView);
 
-/**
+/*
  *  Infinite scroll allowed block
  *  Return NO to block the infinite scroll. Useful to stop requests when you have shown all results, etc.
  */
@@ -132,12 +132,12 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
 @end
 
 
-/**
+/*
  *  Private category on UIScrollView to define dynamic properties.
  */
 @interface UIScrollView ()
 
-/**
+/*
  *  Infinite scroll state.
  */
 @property (nonatomic, readonly, getter=pb_infiniteScrollState) _PBInfiniteScrollState *pb_infiniteScrollState;
@@ -284,7 +284,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
 #pragma mark - Private methods
 #pragma mark -
 
-/**
+/*
  *  Additional pan gesture handler used to adjust content offset to reveal or hide indicator view.
  *
 
@@ -295,7 +295,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     }
 }
 
-/**
+/*
  *  This is a swizzled proxy method for setContentOffset of UIScrollView.
  *
  */
@@ -307,7 +307,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     }
 }
 
-/**
+/*
  *  This is a swizzled proxy method for setContentSize of UIScrollView
  *
  */
@@ -319,7 +319,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     }
 }
 
-/**
+/*
  *  Clamp content size to fit visible bounds of scroll view.
  *  Visible area is a scroll view size minus original top and bottom insets.
  *
@@ -334,7 +334,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     return MAX(contentSize.height, minHeight);
 }
 
-/**
+/*
  *  Returns bottom inset without extra padding and indicator padding.
  *
  *  @return CGFloat
@@ -345,7 +345,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     return self.contentInset.bottom - state.extraBottomInset - state.indicatorInset;
 }
 
-/**
+/*
  *  Call infinite scroll handler block, primarily here because we use performSelector to call this method.
  */
 - (void)pb_callInfiniteScrollHandler {
@@ -358,7 +358,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     TRACE(@"Call handler.");
 }
 
-/**
+/*
  *  Guaranteed to return an indicator view.
  *
  *  @return indicator view.
@@ -379,7 +379,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     return activityIndicator;
 }
 
-/**
+/*
  *  A row height for indicator view, in other words: indicator margin + indicator height.
  *
  *  @return CGFloat
@@ -391,7 +391,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     return indicatorHeight + self.infiniteScrollIndicatorMargin * 2;
 }
 
-/**
+/*
  *  Update infinite scroll indicator's position in view.
  *
  *  @param contentSize content size.
@@ -407,7 +407,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     }
 }
 
-/**
+/*
  *  Start animating infinite indicator
  */
 - (void)pb_startAnimatingInfiniteScroll {
@@ -458,7 +458,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     TRACE(@"Start animating.");
 }
 
-/**
+/*
  *  Stop animating infinite scroll indicator
  *
  *  @param handler a completion handler
@@ -528,7 +528,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     return YES;
 }
 
-/**
+/*
  *  Called whenever content offset changes.
  *
  */
@@ -577,7 +577,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     }
 }
 
-/**
+/*
  *  Scrolls down to activity indicator if it is partially visible
  *
  *  @param reveal scroll to reveal or hide activity indicator
@@ -609,7 +609,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     }
 }
 
-/**
+/*
  *  Set content inset with animation.
  *
  *  @param contentInset a new content inset

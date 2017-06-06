@@ -27,29 +27,29 @@
 
 #import <UIKit/UIKit.h>
 
-/** Enum representing different Dropdown direction*/
+/* Enum representing different Dropdown direction*/
 typedef NS_ENUM(NSUInteger, VSDropdown_Direction)
 {
-    /** Enum representing automatic direction.*/
+    /* Enum representing automatic direction.*/
     VSDropdownDirection_Automatic = 0,
     
-    /** Enum representing up direction.*/
+    /* Enum representing up direction.*/
     VSDropdownDirection_Up,
     
-    /** Enum representing down direction.*/
+    /* Enum representing down direction.*/
     VSDropdownDirection_Down
 };
 
-/** Enum representing different Dropdown direction*/
+/* Enum representing different Dropdown direction*/
 typedef NS_ENUM(NSUInteger, DropdownAnimation)
 {
-    /** Enum representing automatic direction.*/
+    /* Enum representing automatic direction.*/
     DropdownAnimation_Fade = 0,
     
-    /** Enum representing up direction.*/
+    /* Enum representing up direction.*/
     DropdownAnimation_Scale,
     
-    /** Enum representing down direction.*/
+    /* Enum representing down direction.*/
     DropdownAnimation_None
 };
 
@@ -81,31 +81,31 @@ typedef NS_ENUM(NSUInteger, DropdownAnimation)
 
 @interface VSDropdown : UIView<UITableViewDataSource,UITableViewDelegate>
 
-/** Holds reference to tableView used in dropdown. */
+/* Holds reference to tableView used in dropdown. */
 @property (nonatomic,readonly) UITableView *tableView;
 
-/** Holds reference to view for which dropdown is called. */
+/* Holds reference to view for which dropdown is called. */
 @property(nonatomic,weak,readonly) UIView *dropDownView;
 
-/** Array containing items to show in dropdown. */
+/* Array containing items to show in dropdown. */
 @property(nonatomic,readonly) NSArray *dataArr;
 
 
-/** Direction for dropdown*/
+/* Direction for dropdown*/
 @property(nonatomic,assign) VSDropdown_Direction direction;
 
-/** Assigned direction  for dropdown*/
+/* Assigned direction  for dropdown*/
 @property(nonatomic,readonly)VSDropdown_Direction assignedDirection;
 
 
-/** Determines whether dropdown should display items in sorted form. */
+/* Determines whether dropdown should display items in sorted form. */
 @property(nonatomic,assign) BOOL controlRemovalManually;
 
 
-/** Delegate to recive events from dropdown */
+/* Delegate to recive events from dropdown */
 @property(nonatomic,weak) id<VSDropdownDelegate>delegate;
 
-/** Dropdown backGround imageview.*/
+/* Dropdown backGround imageview.*/
 @property(nonatomic,assign) DropdownAnimation drodownAnimation;
 
 - (instancetype)initWithDelegate:(id<VSDropdownDelegate>)delegate;
@@ -113,16 +113,16 @@ typedef NS_ENUM(NSUInteger, DropdownAnimation)
 @property (nonatomic, copy) void(^didSelectItem)(id item, NSUInteger index);
 
 
-/** Use this method to show a dropdown over/below a view. If view passed is a UIButton, than font of the UIButton will be used.
+/* Use this method to show a dropdown over/below a view. If view passed is a UIButton, than font of the UIButton will be used.
  
- @param view UIView below/over which dropdown is required.
+ param view UIView below/over which dropdown is required.
  */
 -(void)setupDropdownForView:(UIView *)view;
 
-/** Use this method to show a dropdown over/below a view. If view passed is a UIButton, than font of the UIButton will be used.
+/* Use this method to show a dropdown over/below a view. If view passed is a UIButton, than font of the UIButton will be used.
  
- @param view UIView below/over which dropdown is required.
- @param direction direction in which dropdowm is required.
+ param view UIView below/over which dropdown is required.
+ param direction direction in which dropdowm is required.
  */
 
 - (void)remove;

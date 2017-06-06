@@ -35,14 +35,14 @@ typedef enum {
 
 @optional
 
-/**
+/*
  *  Sets the number of items in one row or column. For `ASJCollectionViewFillLayoutVertical`, the collection view will scroll vertically so this property refers to the item count in one row.
  *  Similarly, for `ASJCollectionViewFillLayoutHorizontal`, the collection view scrolls horizontally and this property refers to the item count in one column.
  *  In each case, the width or height for each item will be calculated accordingly.
  */
 - (NSInteger)numberOfItemsInSide;
 
-/**
+/*
  *  Sets the width or height for a collection view item, depending on the direction of the layout.
  *  By default, the direction is `ASJCollectionViewFillLayoutVertical` for which the item width will be calculated and the item height may vary.
  *  For `ASJCollectionViewFillLayoutVertical`, the item height will be calculated and the item width may vary.
@@ -50,7 +50,7 @@ typedef enum {
  */
 - (CGFloat)itemLength;
 
-/**
+/*
  *  Sets the 'inter-item spacing' between two collection
  *  view items. This will also set the padding between an
  *  item and the collection view boundary.
@@ -61,14 +61,14 @@ typedef enum {
 
 @interface ASJCollectionViewFillLayout : UICollectionViewLayout
 
-/**
+/*
  *  Sets the number of items in one row or column. For `ASJCollectionViewFillLayoutVertical`, the collection view will scroll vertically so this property refers to the item count in one row.
  *  Similarly, for `ASJCollectionViewFillLayoutHorizontal`, the collection view scrolls horizontally and this property refers to the item count in one column.
  *  In each case, the width or height for each item will be calculated accordingly.
  */
 @property (assign, nonatomic) NSInteger numberOfItemsInSide;
 
-/**
+/*
  *  Sets the width or height for a collection view item, depending on the direction of the layout.
  *  By default, the direction is `ASJCollectionViewFillLayoutVertical` for which the item width will be calculated and the item height may vary.
  *  For `ASJCollectionViewFillLayoutVertical`, the item height will be calculated and the item width may vary.
@@ -76,26 +76,26 @@ typedef enum {
  */
 @property (assign, nonatomic) CGFloat itemLength;
 
-/**
+/*
  *  Sets the 'inter-item spacing' between two collection
  *  view items. This will also set the padding between an
  *  item and the collection view boundary.
  */
 @property (assign, nonatomic) CGFloat itemSpacing;
 
-/**
+/*
  *  Arranges the collection view items vertically or horizontally. Defaults to `ASJCollectionViewFillLayoutVertical`.
  */
 @property (assign, nonatomic) ASJCollectionViewFillLayoutDirection direction;
 
-/**
+/*
  *  Sets the stretching behavior for the items in the last 'row' or 'column'.
  *  If set to NO all items will have the same size, YES stretches them
  *  across the collection view width or height (default behavior).
  */
 @property (assign, nonatomic) BOOL stretchesLastItems;
 
-/**
+/*
  *  The delegate for the fill layout. You must set this
  *  in order to use the methods defined in the protocol.
  */

@@ -67,7 +67,7 @@ static const NSTimeInterval kDefaultDuration = 0.25;
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-    [self.tableView setSeparatorColor:[UIColor separatorColor]];
+    [self.tableView setSeparatorColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.12]];
     [self addSubview:self.tableView];
     
 }
@@ -78,7 +78,7 @@ static const NSTimeInterval kDefaultDuration = 0.25;
 }
 
 - (void)didPerformSetup {
-    self.layer.borderColor = [UIColor separatorColor].CGColor;
+    self.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.12].CGColor;
     self.layer.borderWidth = 0.5f;
 }
 
