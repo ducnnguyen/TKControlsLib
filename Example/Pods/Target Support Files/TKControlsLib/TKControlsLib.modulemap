@@ -1,6 +1,0 @@
-framework module TKControlsLib {
-  umbrella header "TKControlsLib-umbrella.h"
-
-  export *
-  module * { export * }
-}
