@@ -16,7 +16,6 @@
 - (NSString*)getWordInFirstCharactor:(int)len;
 - (NSInteger)getNumberInString;
 - (NSMutableAttributedString*)promotionAttributeString;
-- (NSMutableAttributedString *)promotionDetailAttributeString;
 - (NSMutableAttributedString*)descriptionAttributeString;
 - (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size;
 - (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
