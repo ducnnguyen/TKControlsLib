@@ -166,56 +166,14 @@
     return count;
 }
 - (NSMutableAttributedString*)informationAttributeString {
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[self dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-    [attrStr beginEditing];
-    
-    [attrStr enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, attrStr.length) options:0 usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
-        if (value) {
-            UIFont *oldFont = (UIFont *)value;
-            if ([oldFont.fontName isEqualToString:@"TimesNewRomanPSMT"]) {
-                UIFont *tempFont = [UIFont systemFontOfSize:14];
-                [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.54) range:range];
-            } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
-                UIFont *tempFont = [UIFont boldSystemFontOfSize:14];
-                [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.87) range:range];
-            } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldItalicMT"]) {
-                UIFont *tempFont = [UIFont italicSystemFontOfSize:14];
-                [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-            }
-        }
-    }];
+    return [self informationAttributeStringWithFontSize:14];
+}
+- (NSMutableAttributedString*)informationAttributeStringWithFontSize:(CGFloat)fontSize {
+    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:rgba(0,0,0,0.87);}</style><span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: %.0f;color:rgba(0,0,0,0.54);\">%@</span>",fontSize,self?self:@""];
+    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[tempContent dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineHeightMultiple:1.3f];
     [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attrStr length])];
-    
-    [attrStr endEditing];
-    return attrStr;
-}
-- (NSMutableAttributedString*)informationAttributeStringWithFontSize:(int)fontSize {
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[self dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-    [attrStr beginEditing];
-    
-    [attrStr enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, attrStr.length) options:0 usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
-        if (value) {
-            UIFont *oldFont = (UIFont *)value;
-            if ([oldFont.fontName isEqualToString:@"TimesNewRomanPSMT"]) {
-                UIFont *tempFont = [UIFont systemFontOfSize:fontSize];
-                [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.54) range:range];
-            } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldMT"]) {
-                UIFont *tempFont = [UIFont boldSystemFontOfSize:fontSize];
-                [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-                [attrStr addAttribute:NSForegroundColorAttributeName value:RGBA1Color(0, 0, 0, 0.87) range:range];
-            } else if ([oldFont.fontName isEqualToString:@"TimesNewRomanPS-BoldItalicMT"]) {
-                UIFont *tempFont = [UIFont italicSystemFontOfSize:fontSize];
-                [attrStr addAttribute:NSFontAttributeName value:tempFont range:range];
-            }
-        }
-    }];
-    
-    [attrStr endEditing];
     return attrStr;
 }
 - (NSString *)stringByDeletingWordsFromStringToFit:(CGRect)rect

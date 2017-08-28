@@ -25,6 +25,6 @@
 - (NSString *)stringByDeletingWordsFromStringToFit:(CGRect)rect
                                          withInset:(CGFloat)inset
                                          usingFont:(UIFont *)font;
-- (NSMutableAttributedString*)informationAttributeStringWithFontSize:(int)fontSize;
+- (NSMutableAttributedString*)informationAttributeStringWithFontSize:(CGFloat)fontSize;
 
 @end
