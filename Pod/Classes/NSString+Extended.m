@@ -7,6 +7,7 @@
 //
 
 #import "NSString+Extended.h"
+#import <DTCoreText/DTCoreText.h>
 
 #define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define RGBA1Color(r, g, b, a)   [UIColor colorWithRed:r green:g blue:b alpha:a]
@@ -104,29 +105,63 @@
     return result;
 }
 - (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size {
-    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:#01579b;}</style><span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: %.0f;color:#01579b;\">%@</span>",size,self?self:@""];
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[tempContent dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+   
+    NSString *fontName = [UIFont systemFontOfSize:[UIFont systemFontSize]].familyName;
+    
+    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:#01579b;} a {color:#1BA8FF;text-decoration: none;}</style><span style=\"font-family: %@; font-size: %.0f;color:#01579b;\">%@</span>",fontName,size, self];
+    
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithHTMLData:[tempContent dataUsingEncoding:NSUTF8StringEncoding] options:0 documentAttributes:nil]];
+    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineHeightMultiple:1.3f];
     [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attrStr length])];
+    [attrStr enumerateAttributesInRange:NSMakeRange(0, [attrStr length]) options:NSAttributedStringEnumerationReverse usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop) {
+         if ([attributes valueForKey:@"DTGUID"] != nil) {
+             [attrStr removeAttribute:@"CTForegroundColorFromContext" range:range];
+         }
+     }];
+    
     return attrStr;
 }
 
 - (NSMutableAttributedString*)descriptionAttributeString{
-    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:rgba(0,0,0,0.87);}</style><span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: 14;color:rgba(0,0,0,0.54);\">%@</span>",self?self:@""];
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[tempContent dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    NSString *fontName = [UIFont systemFontOfSize:[UIFont systemFontSize]].familyName;
+    
+    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:rgba(0,0,0,0.87);} a {color:#1BA8FF;text-decoration: none;}</style><span style=\"font-family: %@; font-size: 14;color:rgba(0,0,0,0.54);\">%@</span>",fontName, self];
+    
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithHTMLData:[tempContent dataUsingEncoding:NSUTF8StringEncoding] options:0 documentAttributes:nil]];
+    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineHeightMultiple:1.3f];
     [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attrStr length])];
+    [attrStr enumerateAttributesInRange:NSMakeRange(0, [attrStr length]) options:NSAttributedStringEnumerationReverse usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop) {
+         if ([attributes valueForKey:@"DTGUID"] != nil) {
+             [attrStr removeAttribute:@"CTForegroundColorFromContext" range:range];
+         }
+     }];
+    
     return attrStr;
 }
 
 - (NSMutableAttributedString*)promotionAttributeString {
-    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:rgb(255,0,0);}</style><span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: 14;color:rgba(0,0,0,0.54);\">%@</span>",self?self:@""];
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[tempContent dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    NSString *fontName = [UIFont systemFontOfSize:[UIFont systemFontSize]].familyName;
+    
+    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:rgb(255,0,0);} a {color:#1BA8FF;text-decoration: none;}</style><span style=\"font-family: %@; font-size: 14;color:rgba(0,0,0,0.54);\">%@</span>",fontName, self];
+    
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithHTMLData:[tempContent dataUsingEncoding:NSUTF8StringEncoding] options:0 documentAttributes:nil]];
+    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineHeightMultiple:1.3f];
     [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attrStr length])];
+    [attrStr enumerateAttributesInRange:NSMakeRange(0, [attrStr length]) options:NSAttributedStringEnumerationReverse usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop) {
+         if ([attributes valueForKey:@"DTGUID"] != nil) {
+             [attrStr removeAttribute:@"CTForegroundColorFromContext" range:range];
+         }
+     }];
+    
     return attrStr;
 }
 

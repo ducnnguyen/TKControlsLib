@@ -33,7 +33,8 @@ Tiki App avaiable on https://itunes.apple.com/us/app/tiki-vn-niềm-vui-mua-sắ
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Pod/Classes/**/*'
-  
+  s.dependency 'DTCoreText'
+
   # s.resource_bundles = {
   #   'TKControlsLib' => ['TKControlsLib/Assets/*.png']
   # }
