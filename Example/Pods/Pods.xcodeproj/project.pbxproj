@@ -302,7 +302,7 @@
 		01EF5CFB345A95922661A7DDF4D55E1F /* NSCoder+DTCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCoder+DTCompatibility.h"; path = "Core/Source/NSCoder+DTCompatibility.h"; sourceTree = "<group>"; };
 		021593D300C162FD604E211CF4D40E1D /* DTAccessibilityViewProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTAccessibilityViewProxy.h; path = Core/Source/DTAccessibilityViewProxy.h; sourceTree = "<group>"; };
 		023C01CF662D3F4FFB686D9573BCE0EF /* NSData+DTCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+DTCrypto.m"; path = "Core/Source/NSData+DTCrypto.m"; sourceTree = "<group>"; };
-		02A50B4D69B650FCDFCF815C9AD38DEC /* TKControlsLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TKControlsLib.framework; path = TKControlsLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A50B4D69B650FCDFCF815C9AD38DEC /* TKControlsLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TKControlsLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04466AAB8BD4340639193728D38A85E6 /* NSString+HTML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "Core/Source/NSString+HTML.m"; sourceTree = "<group>"; };
 		04BE66ECC088CEB8E08FF0FC24BED225 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BBBadgeBarButtonItem.h; path = Pod/Classes/BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
 		056792E32DBEDF387051EC0369A1E721 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -347,11 +347,11 @@
 		2EE6880CD9467DB7237CB10F309C8052 /* DTListItemHTMLElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTListItemHTMLElement.m; path = Core/Source/DTListItemHTMLElement.m; sourceTree = "<group>"; };
 		300F4195A40C246099EC30E9ADC5AA85 /* UIViewController+Popup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Popup.h"; path = "Pod/Classes/UIViewController+Popup.h"; sourceTree = "<group>"; };
 		3073DBF479046889AE024DF9EE7C8B12 /* NSArray+DTError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+DTError.h"; path = "Core/Source/NSArray+DTError.h"; sourceTree = "<group>"; };
-		31776C66DD1FF08B4D51940AC8012BE0 /* DTFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DTFoundation.framework; path = DTFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3683F27946A9BA13A9699AF30481AB0D /* Pods-TKControlsLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TKControlsLib_Example.modulemap"; sourceTree = "<group>"; };
+		31776C66DD1FF08B4D51940AC8012BE0 /* DTFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3683F27946A9BA13A9699AF30481AB0D /* Pods-TKControlsLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TKControlsLib_Example.modulemap"; sourceTree = "<group>"; };
 		3786B11D74C9F90C0611ABBF455A8184 /* DTHTMLElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTHTMLElement.h; path = Core/Source/DTHTMLElement.h; sourceTree = "<group>"; };
 		3B62FC9527119A32CCE1A388F3D72F61 /* DTCoreTextFontCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTCoreTextFontCollection.m; path = Core/Source/DTCoreTextFontCollection.m; sourceTree = "<group>"; };
-		3BF098CC79D9A015C110CB9F5457B83C /* DTCoreText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DTCoreText.framework; path = DTCoreText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF098CC79D9A015C110CB9F5457B83C /* DTCoreText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTCoreText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD804E971175E343118883943BC797A /* DTStylesheetHTMLElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTStylesheetHTMLElement.m; path = Core/Source/DTStylesheetHTMLElement.m; sourceTree = "<group>"; };
 		40F81E8CD24F225EE4523B95D13747C4 /* DTBase64Coding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTBase64Coding.m; path = Core/Source/DTBase64Coding.m; sourceTree = "<group>"; };
 		427F9B64010C6633A5FD32BB056AFDF9 /* DTAnchorHTMLElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTAnchorHTMLElement.m; path = Core/Source/DTAnchorHTMLElement.m; sourceTree = "<group>"; };
@@ -374,7 +374,7 @@
 		4C2313A580AB710F620222F97622DA43 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+InfiniteScroll.h"; path = "Pod/Classes/UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
 		4C6AF4746C2637FBE897ABCBA0166C52 /* DTSmartPagingScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTSmartPagingScrollView.m; path = Core/Source/iOS/DTSmartPagingScrollView.m; sourceTree = "<group>"; };
 		4CD24470B490CF2792875580C1E405FC /* DTLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTLog.h; path = Core/Source/DTLog.h; sourceTree = "<group>"; };
-		4D045AAFA893EF333A7F05417041D0F0 /* TKControlsLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TKControlsLib.modulemap; sourceTree = "<group>"; };
+		4D045AAFA893EF333A7F05417041D0F0 /* TKControlsLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TKControlsLib.modulemap; sourceTree = "<group>"; };
 		4D1EA81B133C6CDDCE1BBA14D3C04367 /* DTCoreTextLayoutFrameAccessibilityElementGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTCoreTextLayoutFrameAccessibilityElementGenerator.h; path = Core/Source/DTCoreTextLayoutFrameAccessibilityElementGenerator.h; sourceTree = "<group>"; };
 		514F33246148429630AE52FC0A3B6778 /* DTCoreTextLayoutFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTCoreTextLayoutFrame.h; path = Core/Source/DTCoreTextLayoutFrame.h; sourceTree = "<group>"; };
 		5188606ABEA30AA4D485C11F617304E8 /* NSString+DTPaths.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+DTPaths.h"; path = "Core/Source/NSString+DTPaths.h"; sourceTree = "<group>"; };
@@ -401,12 +401,12 @@
 		68688A00951ED0DD43ED26295F22A50B /* DTWebVideoView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTWebVideoView.h; path = Core/Source/iOS/DTWebVideoView.h; sourceTree = "<group>"; };
 		68955D5269F9F796D12A0C960C3595E0 /* NSMutableAttributedString+HTML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+HTML.m"; path = "Core/Source/NSMutableAttributedString+HTML.m"; sourceTree = "<group>"; };
 		698932CAB6F6A09B29E7CA3C92A0C669 /* DTExtendedFileAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTExtendedFileAttributes.m; path = Core/Source/DTExtendedFileAttributes.m; sourceTree = "<group>"; };
-		6A847F4A01F36FA35E7E1962F5869179 /* DTFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DTFoundation.modulemap; sourceTree = "<group>"; };
+		6A847F4A01F36FA35E7E1962F5869179 /* DTFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DTFoundation.modulemap; sourceTree = "<group>"; };
 		6B631704AF4026D2ADA2C4334715BDC3 /* DTFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTFoundation-umbrella.h"; sourceTree = "<group>"; };
 		6BD1E81AE7A1A08AA8462602316BD459 /* DTCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTCompatibility.h; path = Core/Source/DTCompatibility.h; sourceTree = "<group>"; };
 		6C15880F662F011BE5E93A0FFF00E558 /* DTHorizontalRuleHTMLElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTHorizontalRuleHTMLElement.h; path = Core/Source/DTHorizontalRuleHTMLElement.h; sourceTree = "<group>"; };
 		6EAEA9C4602FF78B87EF7634E9A44664 /* NSString+Paragraphs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Paragraphs.m"; path = "Core/Source/NSString+Paragraphs.m"; sourceTree = "<group>"; };
-		709F20F9F119B3FE44B8DCB63D8D0581 /* default.css.c */ = {isa = PBXFileReference; includeInIndex = 1; name = default.css.c; path = Core/Source/default.css.c; sourceTree = "<group>"; };
+		709F20F9F119B3FE44B8DCB63D8D0581 /* default.css.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = default.css.c; path = Core/Source/default.css.c; sourceTree = "<group>"; };
 		70FDA9FF88F092AB63957809ED550F33 /* NSCharacterSet+HTML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCharacterSet+HTML.m"; path = "Core/Source/NSCharacterSet+HTML.m"; sourceTree = "<group>"; };
 		715E68A668A14289DFD6E60713EDAD59 /* UIApplication+DTNetworkActivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+DTNetworkActivity.h"; path = "Core/Source/iOS/UIApplication+DTNetworkActivity.h"; sourceTree = "<group>"; };
 		73AEA65D20D0735D7F5DC9668F2C337C /* DTExtendedFileAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTExtendedFileAttributes.h; path = Core/Source/DTExtendedFileAttributes.h; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 		84C599C5E2FFBB3A3E1F47A7F55923F8 /* Pods-TKControlsLib_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TKControlsLib_Example-umbrella.h"; sourceTree = "<group>"; };
 		85202BF53ABBED6D67AEA26419D38A7B /* DTCoreTextFontDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTCoreTextFontDescriptor.h; path = Core/Source/DTCoreTextFontDescriptor.h; sourceTree = "<group>"; };
 		859689B315AB0B22585B1FE5A9993310 /* NSString+HTML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Core/Source/NSString+HTML.h"; sourceTree = "<group>"; };
-		85B6B5166DDCC84990EFCEC9876ECC5A /* Pods_TKControlsLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TKControlsLib_Example.framework; path = "Pods-TKControlsLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B6B5166DDCC84990EFCEC9876ECC5A /* Pods_TKControlsLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TKControlsLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C64CAA61769709F566B89674452DDB /* DTTiledLayerWithoutFade.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTiledLayerWithoutFade.h; path = Core/Source/iOS/DTTiledLayerWithoutFade.h; sourceTree = "<group>"; };
 		862CCD4D6C5028C50772211C31464E47 /* NSMutableAttributedString+HTML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+HTML.h"; path = "Core/Source/NSMutableAttributedString+HTML.h"; sourceTree = "<group>"; };
 		865008CB06DBE88CEB4E780F06617419 /* DTCoreTextLayoutFrameAccessibilityElementGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTCoreTextLayoutFrameAccessibilityElementGenerator.m; path = Core/Source/DTCoreTextLayoutFrameAccessibilityElementGenerator.m; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 		92CE4CE4D33124200D4094A1C4775D2D /* Pods-TKControlsLib_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKControlsLib_Tests-resources.sh"; sourceTree = "<group>"; };
 		9342BDAE5F4490EFA8F52EEB0346D2CF /* NSString+CSS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CSS.h"; path = "Core/Source/NSString+CSS.h"; sourceTree = "<group>"; };
 		9379324760E75F16F520EE48C45D7147 /* DTFoundation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DTFoundation.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9512157348A44E5FD0CCC5E140D07436 /* DTHTMLParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTHTMLParser.h; path = Core/Source/DTHTMLParser/DTHTMLParser.h; sourceTree = "<group>"; };
 		96338C8A16021CDF6B833DB877ED61E0 /* DTCoreTextConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTCoreTextConstants.m; path = Core/Source/DTCoreTextConstants.m; sourceTree = "<group>"; };
 		975CECE86334097E57D1BB9486E70AFD /* DTTextBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTextBlock.h; path = Core/Source/DTTextBlock.h; sourceTree = "<group>"; };
@@ -509,7 +509,7 @@
 		CDBC5961F932C520D8DE74816366985A /* UIView+ViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ViewController.h"; path = "Pod/Classes/UIView+ViewController.h"; sourceTree = "<group>"; };
 		CED9F50E133125B5C59E7B6A0ECD7F83 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		CF509BFE2F49B9499358BFF316677D53 /* TKControlsLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKControlsLib-umbrella.h"; sourceTree = "<group>"; };
-		D00E3134B26DB5A075CFA9E11BA36E35 /* Pods-TKControlsLib_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TKControlsLib_Tests.modulemap"; sourceTree = "<group>"; };
+		D00E3134B26DB5A075CFA9E11BA36E35 /* Pods-TKControlsLib_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TKControlsLib_Tests.modulemap"; sourceTree = "<group>"; };
 		D072413290778006B8F06CE1BDD0C9DC /* UIWebView+DTFoundation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+DTFoundation.m"; path = "Core/Source/iOS/UIWebView+DTFoundation.m"; sourceTree = "<group>"; };
 		D09B81166B3ABCF55EFE8EC4BEF52992 /* NSString+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "Pod/Classes/NSString+Additions.h"; sourceTree = "<group>"; };
 		D11756B15A5045D19BBA8BEDDC66C496 /* Pods-TKControlsLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKControlsLib_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -547,7 +547,7 @@
 		ED4A85376458B91C0E44C0B8AD9C9E64 /* UIFont+DTCoreText.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+DTCoreText.m"; path = "Core/Source/UIFont+DTCoreText.m"; sourceTree = "<group>"; };
 		ED7E12FBAF6A5C84C81ED9E6C3696B36 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		EFA71219588B823DB70C84D3FE65B709 /* DTCoreText-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTCoreText-umbrella.h"; sourceTree = "<group>"; };
-		F11DFB18A2E0E063EC1F59C14EC6B98C /* Pods_TKControlsLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TKControlsLib_Tests.framework; path = "Pods-TKControlsLib_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11DFB18A2E0E063EC1F59C14EC6B98C /* Pods_TKControlsLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TKControlsLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19F816707F9CF75A687B47154FE79E4 /* DTAnimatedGIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTAnimatedGIF.m; path = Core/Source/iOS/DTAnimatedGIF/DTAnimatedGIF.m; sourceTree = "<group>"; };
 		F19FE2D04436EB03F75BB05530E36162 /* MQHorizontalFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQHorizontalFlowLayout.m; path = Pod/Classes/MQHorizontalFlowLayout.m; sourceTree = "<group>"; };
 		F20D7F3C66BCC6C9986A8F14F1EC0C31 /* DTCSSStylesheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTCSSStylesheet.h; path = Core/Source/DTCSSStylesheet.h; sourceTree = "<group>"; };
@@ -559,7 +559,7 @@
 		F57E48C3EA3EA94F31E9EEF503B6831D /* DTLinkButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTLinkButton.m; path = Core/Source/DTLinkButton.m; sourceTree = "<group>"; };
 		F5941FF74A39050D0A2EE7D46701A022 /* DTHTMLAttributedStringBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTHTMLAttributedStringBuilder.m; path = Core/Source/DTHTMLAttributedStringBuilder.m; sourceTree = "<group>"; };
 		F6954F4BD62038790AEFC8AFD260B87A /* DTColorFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTColorFunctions.m; path = Core/Source/DTColorFunctions.m; sourceTree = "<group>"; };
-		F783DF155D2B04A2808E264DF4267062 /* DTCoreText.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DTCoreText.modulemap; sourceTree = "<group>"; };
+		F783DF155D2B04A2808E264DF4267062 /* DTCoreText.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DTCoreText.modulemap; sourceTree = "<group>"; };
 		F84F4557F002B1362F369A425B2F261D /* NSAttributedString+SmallCaps.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+SmallCaps.m"; path = "Core/Source/NSAttributedString+SmallCaps.m"; sourceTree = "<group>"; };
 		F9255700410F7427044A59D610386953 /* DTFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99455E71AE2FBDCEE1C6A885AB14A92 /* DTAttributedTextContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTAttributedTextContentView.m; path = Core/Source/DTAttributedTextContentView.m; sourceTree = "<group>"; };
@@ -865,7 +865,6 @@
 				94F66A950B2A9C47C217AEB7A272EB2F /* Core */,
 				CA8FAE7C2DA9B09FE8C2CEBE1629E55F /* Support Files */,
 			);
-			name = DTCoreText;
 			path = DTCoreText;
 			sourceTree = "<group>";
 		};
@@ -942,7 +941,6 @@
 				6ED5A80FF4C6D9F0EE2E2540A78BE954 /* Support Files */,
 				4BD0D7D93F755450D5BBCA6ACA8B69AB /* UIKit */,
 			);
-			name = DTFoundation;
 			path = DTFoundation;
 			sourceTree = "<group>";
 		};
@@ -1316,7 +1314,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1607,7 +1605,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1615,14 +1615,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -1750,7 +1756,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1758,15 +1766,21 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
