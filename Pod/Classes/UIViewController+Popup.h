@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^TapOnBackgroundAction)();
+typedef void (^TapOnBackgroundAction)(void);
 
 @interface UIViewController (Popup)
 
