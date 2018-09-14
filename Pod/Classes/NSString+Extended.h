@@ -10,16 +10,16 @@
 
 @interface NSString (Extended)
 
-- (NSString *)urlencode;
-- (NSString*)uppercaseFirstCharactor;
-- (NSString *)reverseString;
-- (NSString*)getWordInFirstCharactor:(int)len;
-- (NSInteger)getNumberInString;
+- (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size
+                                  foregroundColor:(UIColor*)foregroundColor
+                                      strongColor:(UIColor*)strongColor
+                                        linkColor:(UIColor*)linkColor;
+
 - (NSMutableAttributedString*)promotionAttributeString;
 - (NSMutableAttributedString*)descriptionAttributeString;
 - (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size;
 - (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
-- (NSUInteger)numberOfWords;
+
 + (BOOL)compareVersion:(NSString*)versionOne biggerToVersion:(NSString*)versionTwo;
 - (NSMutableAttributedString*)informationAttributeString;
 - (NSString *)stringByDeletingWordsFromStringToFit:(CGRect)rect

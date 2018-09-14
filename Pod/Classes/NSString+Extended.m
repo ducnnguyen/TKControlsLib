@@ -9,105 +9,45 @@
 #import "NSString+Extended.h"
 #import <DTCoreText/DTCoreText.h>
 
-#define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-#define RGBA1Color(r, g, b, a)   [UIColor colorWithRed:r green:g blue:b alpha:a]
-#define RGB255Color(r, g, b)     [UIColor colorWithRed:(float)r/255.0 green:(float)g/255.0 blue:(float)b/255.0 alpha:1.0]
-#define RGBA255Color(r, g, b, a) [UIColor colorWithRed:(float)r/255.0 green:(float)g/255.0 blue:(float)b/255.0 alpha:a]
-
 @implementation NSString (Extended)
 
-- (NSString *)urlencode
-{
-    NSMutableString *output = [NSMutableString string];
-    const unsigned char *source = (const unsigned char *)[self UTF8String];
-    int sourceLen = (int)strlen((const char *)source);
-    for (int i = 0; i < sourceLen; ++i) {
-        const unsigned char thisChar = source[i];
-        if (thisChar == ' '){
-            [output appendString:@"+"];
-        } else if (thisChar == '.' ||
-                   thisChar == '-' ||
-                   thisChar == '_' ||
-                   thisChar == '~' ||
-                   (thisChar >= 'a' && thisChar <= 'z') ||
-                   (thisChar >= 'A' && thisChar <= 'Z') ||
-                   (thisChar >= '0' && thisChar <= '9')) {
-            [output appendFormat:@"%c", thisChar];
-        } else {
-            [output appendFormat:@"%%%02X", thisChar];
-        }
-    }
-    return output;
++ (NSString *)hexStringForColor:(UIColor *)color {
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+    CGFloat r = components[0];
+    CGFloat g = components[1];
+    CGFloat b = components[2];
+    NSString *hexString=[NSString stringWithFormat:@"%02X%02X%02X", (int)(r * 255), (int)(g * 255), (int)(b * 255)];
+    return hexString;
 }
 
-- (NSInteger )getNumberInString {
-        NSCharacterSet *nonDigitCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+- (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size
+                                  foregroundColor:(UIColor*)foregroundColor
+                                      strongColor:(UIColor*)strongColor
+                                        linkColor:(UIColor*)linkColor {
+    NSString *fontName = [UIFont systemFontOfSize:[UIFont systemFontSize]].familyName;
+    NSString *foreGroundColorString = [NSString hexStringForColor:foregroundColor];
+    NSString *strongColorString = [NSString hexStringForColor:strongColor];
+    NSString *linkColorString = [NSString hexStringForColor:linkColor];
     
-    NSArray *componentStr = [self componentsSeparatedByCharactersInSet:nonDigitCharacterSet];
-    if (componentStr.count > 0) {
-        NSString *numberInStr =  [componentStr componentsJoinedByString:@""];
-        return [numberInStr integerValue];
-        
-    }
-    return -1;
+    NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:#%@;} a {color:#%@;text-decoration: none;}</style><span style=\"font-family: %@; font-size: %.0f;color:#%@;\">%@</span>",strongColorString, linkColorString, fontName, size, foreGroundColorString, self];
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithHTMLData:[tempContent dataUsingEncoding:NSUTF8StringEncoding] options:0 documentAttributes:nil]];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineHeightMultiple:1.3f];
+    [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attrStr length])];
+    [attrStr enumerateAttributesInRange:NSMakeRange(0, [attrStr length]) options:NSAttributedStringEnumerationReverse usingBlock:
+     ^(NSDictionary *attributes, NSRange range, BOOL *stop) {
+         if ([attributes valueForKey:@"DTGUID"] != nil) {
+             [attrStr removeAttribute:@"CTForegroundColorFromContext" range:range];
+         }
+     }];
+    
+    return attrStr;
 }
 
-/*viết hoa chữ cái đầu tiên trong câu*/
--(NSString*)uppercaseFirstCharactor
-{
-    NSString *result = [self lowercaseString];
-    if (result.length > 0) {
-        result=[[[result substringToIndex:1] uppercaseString] stringByAppendingString:[result substringFromIndex:1]];
-        return result;
-    }
-    return nil;
-}
-
-/* Đảo ngược chuỗi */
-- (NSString *)reverseString
-{
-    NSUInteger stringLength = self.length;
-    
-    NSMutableString *reversedString = [[NSMutableString alloc] initWithCapacity:stringLength];
-    while (stringLength) {
-        [reversedString appendFormat:@"%C", [self characterAtIndex:--stringLength]];
-    }
-    return reversedString;
-}
-
-/* Cắt chuỗi */
-- (NSString*)getWordInFirstCharactor:(int)len
-{
-    if (self.length <= len) {
-        return self;
-    }
-    
-    NSRange range;
-    range.location = 0;
-    range.length = len;
-    
-    NSString *cutString = [self substringWithRange:range];
-    
-    NSString *reverseString = [cutString reverseString];
-    
-    // Tìm ra khoảng trắng đầu tiên
-    NSRange rgWhiteCharactor = [reverseString rangeOfString:@" "];
-    rgWhiteCharactor.length = rgWhiteCharactor.location + 1;
-    rgWhiteCharactor.location = 0;
-    
-    // Remove nó
-    if (rgWhiteCharactor.length > self.length || rgWhiteCharactor.location > self.length) {
-        return self;
-    }
-    NSString *result = [reverseString stringByReplacingCharactersInRange:rgWhiteCharactor withString:@""];
-    result = [result reverseString];
-    result = [result stringByAppendingString:@" ..."];
-    return result;
-}
-- (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size {
+- (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size{
    
     NSString *fontName = [UIFont systemFontOfSize:[UIFont systemFontSize]].familyName;
-    
     NSString *tempContent = [NSString stringWithFormat:@"<style>strong{color:#01579b;} a {color:#1BA8FF;text-decoration: none;}</style><span style=\"font-family: %@; font-size: %.0f;color:#01579b;\">%@</span>",fontName,size, self];
     
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithHTMLData:[tempContent dataUsingEncoding:NSUTF8StringEncoding] options:0 documentAttributes:nil]];
@@ -191,15 +131,6 @@
     return YES;
 }
 
-- (NSUInteger)numberOfWords {
-    __block NSUInteger count = 0;
-    [self enumerateSubstringsInRange:NSMakeRange(0, [self length])
-                            options:NSStringEnumerationByWords|NSStringEnumerationSubstringNotRequired
-                         usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-                             count++;
-                         }];
-    return count;
-}
 - (NSMutableAttributedString*)informationAttributeString {
     return [self informationAttributeStringWithFontSize:14];
 }
