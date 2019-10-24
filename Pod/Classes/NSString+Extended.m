@@ -190,14 +190,18 @@
                                           withText:(NSString *)text
                                     withExpandText:(NSString *)expandText {
     NSString *result = [text copy];
+    BOOL isAppendExpandText = NO;
     if (!font) font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-    CGSize expandTextSize = [expandText sizeWithAttributes:@{NSFontAttributeName: font}];
-    CGSize maxSize = CGSizeMake(rect.size.width  - (inset * 2) - expandTextSize.width, FLT_MAX);
+    CGSize maxSize = CGSizeMake(rect.size.width  - (inset * 2), FLT_MAX);
     CGRect boundingRect = [result boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, } context:nil];
     CGSize size = boundingRect.size;
     NSRange range;
     if (rect.size.height < size.height)
     while (rect.size.height < size.height) {
+        if (isAppendExpandText) {
+            result = [result stringByReplacingOccurrencesOfString:expandText withString:@""];
+            isAppendExpandText = NO;
+        }
         range = [result rangeOfString:@" "
                               options:NSBackwardsSearch];
         if (range.location != NSNotFound && range.location > 0 ) {
@@ -205,10 +209,13 @@
         } else {
             result = [result substringToIndex:result.length - 1];
         }
+        result = [result stringByAppendingString:expandText];
+        isAppendExpandText = YES;
         if (!font) font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
         CGRect boundingRect = [result boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, } context:nil];
         size = boundingRect.size;
     }
+    result = [result stringByReplacingOccurrencesOfString:expandText withString:@""];
     return result;
 }
 @end
