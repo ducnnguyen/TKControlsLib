@@ -190,6 +190,7 @@
                                           withText:(NSString *)text
                                     withExpandText:(NSString *)expandText {
     NSString *result = [text copy];
+    result = [result stringByReplacingOccurrencesOfString:@"\n" withString:@" \n"];
     BOOL isAppendExpandText = NO;
     if (!font) font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     CGSize maxSize = CGSizeMake(rect.size.width  - (inset * 2), FLT_MAX);
