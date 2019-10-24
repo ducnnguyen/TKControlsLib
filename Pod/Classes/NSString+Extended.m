@@ -190,9 +190,9 @@
                                           withText:(NSString *)text
                                     withExpandText:(NSString *)expandText {
     NSString *result = [text copy];
-    CGSize expandTextSize = [expandText sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}];
-    CGSize maxSize = CGSizeMake(rect.size.width  - (inset * 2) - expandTextSize.width, FLT_MAX);
     if (!font) font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    CGSize expandTextSize = [expandText sizeWithAttributes:@{NSFontAttributeName: font}];
+    CGSize maxSize = CGSizeMake(rect.size.width  - (inset * 2) - expandTextSize.width, FLT_MAX);
     CGRect boundingRect = [result boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, } context:nil];
     CGSize size = boundingRect.size;
     NSRange range;
