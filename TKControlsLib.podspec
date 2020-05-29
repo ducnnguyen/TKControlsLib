@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TKControlsLib'
-  s.version          = '0.7.3'
+  s.version          = '0.8.0'
   s.summary          = 'Move controls which using in Tki App to Cocoapod'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ Tiki App avaiable on https://itunes.apple.com/us/app/tiki-vn-niềm-vui-mua-sắ
   s.source           = { :git => 'https://github.com/ducnnguyen/TKControlsLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'Pod/Classes/**/*.{h,m,swift}'
   s.dependency 'DTCoreText'
