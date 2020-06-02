@@ -222,11 +222,8 @@
         if ([additionalPath isEqualToString:@""])
             return;
         
-        BOOL hasRemovedText = NO;
         if ([additionalPath isEqualToString:self.predicatedText]) {
             self.predicatedText = [firstNumber substringFromIndex:editedText.length-1];
-            additionalPath = @"";
-            hasRemovedText = YES;
             additionalPath = self.predicatedText;
         } else {
             self.predicatedText = additionalPath;
