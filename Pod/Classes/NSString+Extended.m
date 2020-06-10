@@ -205,12 +205,12 @@
         } else {
             result = [result substringToIndex:result.length - 1];
         }
-        result = [result stringByAppendingString:expandText];
+        NSString *temp = [result copy];
+        temp = [temp stringByAppendingString:expandText];
         if (!font) font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-        CGRect boundingRect = [result boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, } context:nil];
+        CGRect boundingRect = [temp boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, } context:nil];
         size = boundingRect.size;
     }
-    result = [result stringByReplacingOccurrencesOfString:expandText withString:@""];
     return result;
 }
 @end
