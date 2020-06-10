@@ -18,7 +18,6 @@
 - (NSMutableAttributedString*)promotionAttributeString;
 - (NSMutableAttributedString*)descriptionAttributeString;
 - (NSMutableAttributedString*)tikiAttributeString:(CGFloat)size;
-- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
 
 + (BOOL)compareVersion:(NSString*)versionOne biggerToVersion:(NSString*)versionTwo;
 - (NSMutableAttributedString*)informationAttributeString;

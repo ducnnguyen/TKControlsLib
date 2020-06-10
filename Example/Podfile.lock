@@ -16,7 +16,7 @@ PODS:
     - DTFoundation/Core
   - DTFoundation/UIKit (1.7.12):
     - DTFoundation/Core
-  - TKControlsLib (0.5.3):
+  - TKControlsLib (1.0.0):
     - DTCoreText
 
 DEPENDENCIES:
@@ -34,8 +34,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: 26a164ef510877387906fb92bff524a792db4bf8
-  TKControlsLib: f30a8e3ec6d2ce2b501165ca9cf3d13800ed0dcb
+  TKControlsLib: 1dac78375c5432303265417b985f1ba3d0772efa
 
 PODFILE CHECKSUM: 343962f6dd8db6d01c1be07b66c46b96a740cae9
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.9.2

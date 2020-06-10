@@ -26,14 +26,13 @@
 
 @interface CarbonTabSwipeNavigation () <UIPageViewControllerDelegate, UIToolbarDelegate,
                                         UIPageViewControllerDataSource, UIScrollViewDelegate>
+@property (nonatomic, assign) BOOL isLoaded;
+@property (nonatomic, assign) BOOL isSwipeLocked;
+@property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, assign) CGPoint previewsOffset;
 @end
 
-@implementation CarbonTabSwipeNavigation {
-    BOOL isLoaded;
-    BOOL isSwipeLocked;
-    NSInteger selectedIndex;
-    CGPoint previewsOffset;
-}
+@implementation CarbonTabSwipeNavigation
 
 - (void)insertIntoRootViewController:(UIViewController *)rootViewController {
     [self willMoveToParentViewController:rootViewController];
@@ -87,7 +86,7 @@
 - (instancetype)initWithItems:(NSArray *)items delegate:(id)target {
     self = [super init];
     if (self) {
-        selectedIndex = 0;
+        self.selectedIndex = 0;
         self.delegate = target;
         self.viewControllers = [NSMutableDictionary new];
 
@@ -104,7 +103,7 @@
 - (instancetype)initWithItems:(NSArray *)items toolBar:(UIToolbar *)toolBar delegate:(id)target {
     self = [super init];
     if (self) {
-        selectedIndex = 0;
+        self.selectedIndex = 0;
         self.delegate = target;
         self.viewControllers = [NSMutableDictionary new];
 
@@ -123,7 +122,7 @@
     [super viewDidAppear:animated];
     [self.pageViewController viewDidAppear:animated];
     [self syncIndicator];
-    isLoaded = YES;
+    self.isLoaded = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -148,9 +147,9 @@
         [self syncIndicator];
         [CATransaction commit];
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        isSwipeLocked = NO;
+        self.isSwipeLocked = NO;
     }];
-    isSwipeLocked = YES;
+    self.isSwipeLocked = YES;
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
@@ -164,7 +163,7 @@
     UIViewController *viewController = [self viewControllerAtIndex:index];
 
     UIPageViewControllerNavigationDirection animateDirection =
-        index >= selectedIndex ? UIPageViewControllerNavigationDirectionForward
+        index >= self.selectedIndex ? UIPageViewControllerNavigationDirectionForward
                                : UIPageViewControllerNavigationDirectionReverse;
 
     // Support RTL
@@ -176,13 +175,13 @@
         }
     }
 
-    isSwipeLocked = YES;
+    self.isSwipeLocked = YES;
     self.carbonSegmentedControl.userInteractionEnabled = NO;
     self.pageViewController.view.userInteractionEnabled = NO;
 
     id animateCompletionBlock = ^(BOOL finished) {
-        isSwipeLocked = NO;
-        selectedIndex = index;
+        self.isSwipeLocked = NO;
+        self.selectedIndex = index;
         self.carbonSegmentedControl.userInteractionEnabled = YES;
         self.pageViewController.view.userInteractionEnabled = YES;
 
@@ -198,7 +197,7 @@
 }
 
 - (void)syncIndicator {
-    NSInteger index = selectedIndex;
+    NSInteger index = self.selectedIndex;
     CGFloat selectedSegmentMinX = [self.carbonSegmentedControl getMinXForSegmentAtIndex:index];
     CGFloat selectedSegmentWidth = [self.carbonSegmentedControl getWidthForSegmentAtIndex:index];
 
@@ -219,10 +218,10 @@
         offsetX = MIN(offsetX, segmentedWidth - tabScrollViewWidth);
     }
 
-    previewsOffset = CGPointMake(offsetX, 0);
-    [UIView animateWithDuration:isLoaded ? 0.3 : 0
+    self.previewsOffset = CGPointMake(offsetX, 0);
+    [UIView animateWithDuration:self.isLoaded ? 0.3 : 0
                      animations:^{
-                         self.carbonTabSwipeScrollView.contentOffset = previewsOffset;
+                         self.carbonTabSwipeScrollView.contentOffset = self.previewsOffset;
                      }];
 }
 
@@ -263,10 +262,10 @@
        transitionCompleted:(BOOL)completed {
     if (completed) {
         id currentView = pageViewController.viewControllers.firstObject;
-        selectedIndex =
+        self.selectedIndex =
             [[self.viewControllers allKeysForObject:currentView].firstObject integerValue];
 
-        [self.carbonSegmentedControl setSelectedSegmentIndex:selectedIndex];
+        [self.carbonSegmentedControl setSelectedSegmentIndex:self.selectedIndex];
         [self.carbonSegmentedControl updateIndicatorWithAnimation:NO];
 
         [self callDelegateForCurrentIndex];
@@ -292,23 +291,23 @@
     CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
     CGFloat tabScrollViewWidth = CGRectGetWidth(self.carbonTabSwipeScrollView.frame);
 
-    if (selectedIndex < 0 || selectedIndex > self.carbonSegmentedControl.numberOfSegments - 1) {
+    if (self.selectedIndex < 0 || self.selectedIndex > self.carbonSegmentedControl.numberOfSegments - 1) {
         return;
     }
 
-    if (isSwipeLocked == false) {
+    if (self.isSwipeLocked == false) {
 
         if (offset.x < scrollViewWidth) {
             // we are moving back
 
             CGFloat newX = offset.x - scrollViewWidth;
 
-            CGFloat selectedSegmentWidth = [self.carbonSegmentedControl getWidthForSegmentAtIndex:selectedIndex];
-            CGFloat selectedOriginX = [self.carbonSegmentedControl getMinXForSegmentAtIndex:selectedIndex];
+            CGFloat selectedSegmentWidth = [self.carbonSegmentedControl getWidthForSegmentAtIndex:self.selectedIndex];
+            CGFloat selectedOriginX = [self.carbonSegmentedControl getMinXForSegmentAtIndex:self.selectedIndex];
             CGFloat backTabWidth = 0;
 
             // Support RTL
-            NSInteger backIndex = selectedIndex;
+            NSInteger backIndex = self.selectedIndex;
             if ([self isRTL]) {
                 // Ensure index range
                 if (!(++backIndex >= self.carbonSegmentedControl.numberOfSegments)) {
@@ -348,8 +347,8 @@
                     [self callDelegateForTargetIndex];
                 }
             } else {
-                if (self.carbonSegmentedControl.selectedSegmentIndex != selectedIndex) {
-                    [self.carbonSegmentedControl setSelectedSegmentIndex:selectedIndex];
+                if (self.carbonSegmentedControl.selectedSegmentIndex != self.selectedIndex) {
+                    [self.carbonSegmentedControl setSelectedSegmentIndex:self.selectedIndex];
                     [self callDelegateForTargetIndex];
                 }
             }
@@ -359,12 +358,12 @@
 
             CGFloat newX = offset.x - scrollViewWidth;
 
-            CGFloat selectedSegmentWidth = [self.carbonSegmentedControl getWidthForSegmentAtIndex:selectedIndex];
-            CGFloat selectedOriginX = [self.carbonSegmentedControl getMinXForSegmentAtIndex:selectedIndex];
+            CGFloat selectedSegmentWidth = [self.carbonSegmentedControl getWidthForSegmentAtIndex:self.selectedIndex];
+            CGFloat selectedOriginX = [self.carbonSegmentedControl getMinXForSegmentAtIndex:self.selectedIndex];
             CGFloat nextTabWidth = 0;
 
             // Support RTL
-            NSInteger nextIndex = selectedIndex;
+            NSInteger nextIndex = self.selectedIndex;
             if ([self isRTL]) {
                 // Ensure index range
                 if (!(--nextIndex < 0)) {
@@ -404,8 +403,8 @@
                     [self callDelegateForTargetIndex];
                 }
             } else {
-                if (self.carbonSegmentedControl.selectedSegmentIndex != selectedIndex) {
-                    [self.carbonSegmentedControl setSelectedSegmentIndex:selectedIndex];
+                if (self.carbonSegmentedControl.selectedSegmentIndex != self.selectedIndex) {
+                    [self.carbonSegmentedControl setSelectedSegmentIndex:self.selectedIndex];
                     [self callDelegateForTargetIndex];
                 }
             }
@@ -427,12 +426,12 @@
         [self.carbonTabSwipeScrollView setContentOffset:self.carbonTabSwipeScrollView.contentOffset animated:NO];
     }
 
-    [UIView animateWithDuration:isSwipeLocked ? 0.3 : 0
+    [UIView animateWithDuration:self.isSwipeLocked ? 0.3 : 0
                      animations:^{
                          self.carbonTabSwipeScrollView.contentOffset = CGPointMake(offsetX, 0);
                      }];
 
-    previewsOffset = scrollView.contentOffset;
+    self.previewsOffset = scrollView.contentOffset;
 }
 
 #pragma mark - Toolbar position
@@ -619,7 +618,7 @@
     // Load first view controller
     NSAssert(self.delegate, @"CarbonTabSwipeDelegate is nil");
 
-    id viewController = [self viewControllerAtIndex:selectedIndex];
+    id viewController = [self viewControllerAtIndex:self.selectedIndex];
 
     [self callDelegateForTargetIndex];
 
@@ -693,11 +692,11 @@
 }
 
 - (NSUInteger)currentTabIndex {
-    return selectedIndex;
+    return self.selectedIndex;
 }
 
 - (void)setCurrentTabIndex:(NSUInteger)currentTabIndex {
-    if (isLoaded) {
+    if (self.isLoaded) {
         [self setCurrentTabIndex:currentTabIndex withAnimation:YES];
     } else {
         [self setCurrentTabIndex:currentTabIndex withAnimation:NO];
@@ -705,12 +704,12 @@
 }
 
 - (void)setCurrentTabIndex:(NSUInteger)currentTabIndex withAnimation:(BOOL)animate {
-    if (isLoaded == NO) {
+    if (self.isLoaded == NO) {
         animate = NO;
     }
 
     NSInteger numberOfSegments = self.carbonSegmentedControl.numberOfSegments;
-    if (currentTabIndex != selectedIndex && currentTabIndex < numberOfSegments) {
+    if (currentTabIndex != self.selectedIndex && currentTabIndex < numberOfSegments) {
         self.carbonSegmentedControl.selectedSegmentIndex = currentTabIndex;
         [self moveToIndex:currentTabIndex withAnimation:animate];
         [self syncIndicator];

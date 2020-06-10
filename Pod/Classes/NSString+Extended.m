@@ -105,13 +105,6 @@
     return attrStr;
 }
 
-- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding {
-    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
-                                                                                 (CFStringRef)self,
-                                                                                 NULL,
-                                                                                 (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
-                                                                                 CFStringConvertNSStringEncodingToEncoding(encoding)));
-}
 
 + (BOOL)compareVersion:(NSString*)versionOne biggerToVersion:(NSString*)versionTwo {
     NSArray* versionOneComp = [versionOne componentsSeparatedByString:@"."];

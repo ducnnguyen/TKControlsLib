@@ -37,25 +37,27 @@ typedef NS_ENUM(NSUInteger, PullState) {
 @interface CarbonSwipeRefresh () {
     dispatch_once_t initConstraits;
 
-    NSLayoutConstraint *topConstrait;
 
-    UIScrollView *tableScrollView;
-
-    CAShapeLayer *pathLayer;
-    CAShapeLayer *arrowLayer;
-    UIView *container;
-    CGFloat marginTop;
-
-    BOOL isDragging;
-    BOOL isFullyPulled;
-    PullState pullState;
-
-    NSInteger colorIndex;
+    
 }
+@property (strong, nonatomic) NSLayoutConstraint *topConstrait;
+@property (strong, nonatomic) UIScrollView *tableScrollView;
+
+@property (strong, nonatomic) CAShapeLayer *pathLayer;
+@property (strong, nonatomic) CAShapeLayer *arrowLayer;
+@property (strong, nonatomic) UIView *container;
+@property (assign, nonatomic) CGFloat marginTop;
+
+@property (assign, nonatomic) BOOL isDragging;
+@property (assign, nonatomic) BOOL isFullyPulled;
+@property (assign, nonatomic) PullState pullState;
+
+@property (assign, nonatomic) NSInteger colorIndex;
 @end
 
 @implementation CarbonSwipeRefresh
 
+@synthesize container, arrowLayer;
 - (id)init {
     if (self = [super init]) {
         self.backgroundColor = [UIColor clearColor];
@@ -110,21 +112,21 @@ typedef NS_ENUM(NSUInteger, PullState) {
         view.layer.shadowRadius = 1.f;
         view.layer.shadowOpacity = .12f;
 
-        pathLayer = [CAShapeLayer layer];
-        pathLayer.strokeStart = 0;
-        pathLayer.strokeEnd = 10;
-        pathLayer.fillColor = nil;
-        pathLayer.lineWidth = 2.5;
+        self.pathLayer = [CAShapeLayer layer];
+        self.pathLayer.strokeStart = 0;
+        self.pathLayer.strokeEnd = 10;
+        self.pathLayer.fillColor = nil;
+        self.pathLayer.lineWidth = 2.5;
 
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(20, 20)
                                                             radius:9
                                                         startAngle:0
                                                           endAngle:2 * M_PI
                                                          clockwise:YES];
-        pathLayer.path = path.CGPath;
-        pathLayer.strokeStart = 1;
-        pathLayer.strokeEnd = 1;
-        pathLayer.lineCap = kCALineCapSquare;
+        self.pathLayer.path = path.CGPath;
+        self.pathLayer.strokeStart = 1;
+        self.pathLayer.strokeEnd = 1;
+        self.pathLayer.lineCap = kCALineCapSquare;
 
         arrowLayer = [CAShapeLayer layer];
         arrowLayer.strokeStart = 0;
@@ -138,7 +140,7 @@ typedef NS_ENUM(NSUInteger, PullState) {
         arrowLayer.path = arrow.CGPath;
         arrowLayer.transform = CATransform3DMakeTranslation(8.5, 0, 0);
 
-        [container.layer addSublayer:pathLayer];
+        [container.layer addSublayer:self.pathLayer];
         [container.layer addSublayer:arrowLayer];
 
         [self setAnchorPoint:CGPointMake(0.5, 0.5) forView:container];
@@ -206,7 +208,7 @@ typedef NS_ENUM(NSUInteger, PullState) {
 - (void)didMoveToSuperview {
     if (self.superview != nil) {
         dispatch_once(&initConstraits, ^{
-            topConstrait = [NSLayoutConstraint constraintWithItem:self
+            self.topConstrait = [NSLayoutConstraint constraintWithItem:self
                                                         attribute:NSLayoutAttributeTop
                                                         relatedBy:NSLayoutRelationEqual
                                                            toItem:self.superview
@@ -222,7 +224,7 @@ typedef NS_ENUM(NSUInteger, PullState) {
                                                              constant:0];
 
             [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-            [self.superview addConstraint:topConstrait];
+            [self.superview addConstraint:self.topConstrait];
             [self.superview addConstraint:centerXConstrait];
         });
     }
@@ -231,9 +233,9 @@ typedef NS_ENUM(NSUInteger, PullState) {
 - (id)initWithScrollView:(UIScrollView *)scrollView {
     self = [self init];
 
-    tableScrollView = scrollView;
+    self.tableScrollView = scrollView;
 
-    marginTop = scrollView.contentOffset.y;
+    self.marginTop = scrollView.contentOffset.y;
 
     if (scrollView) {
         [scrollView addObserver:self
@@ -250,12 +252,12 @@ typedef NS_ENUM(NSUInteger, PullState) {
 }
 
 - (void)dealloc {
-    [tableScrollView removeObserver:self forKeyPath:@"contentOffset"];
-    [tableScrollView removeObserver:self forKeyPath:@"pan.state"];
+    [self.tableScrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [self.tableScrollView removeObserver:self forKeyPath:@"pan.state"];
 }
 
 - (void)setMarginTop:(CGFloat)topMargin {
-    marginTop = -topMargin;
+    self.marginTop = -topMargin;
     [self layoutIfNeeded];
 }
 
@@ -282,33 +284,33 @@ typedef NS_ENUM(NSUInteger, PullState) {
 
     } else if ([keyPath isEqualToString:@"pan.state"]) {
 
-        if (pullState == PullStateRefreshing)
+        if (self.pullState == PullStateRefreshing)
             return;
 
         NSInteger state = [[change valueForKey:NSKeyValueChangeNewKey] integerValue];
 
         if (state == 2) {
-            if (pullState == PullStateFinished) {
-                if (tableScrollView.contentOffset.y > -10 + marginTop) {
-                    isDragging = YES;
-                    pullState = PullStateDragging;
+            if (self.pullState == PullStateFinished) {
+                if (self.tableScrollView.contentOffset.y > -10 + self.marginTop) {
+                    self.isDragging = YES;
+                    self.pullState = PullStateDragging;
                 }
             } else {
-                isDragging = YES;
-                pullState = PullStateDragging;
+                self.isDragging = YES;
+                self.pullState = PullStateDragging;
             }
 
         } else if (state == 3) {
 
-            if (pullState != PullStateDragging)
+            if (self.pullState != PullStateDragging)
                 return;
 
-            isDragging = NO;
-            if (isFullyPulled) {
-                pullState = PullStateRefreshing;
+            self.isDragging = NO;
+            if (self.isFullyPulled) {
+                self.pullState = PullStateRefreshing;
                 [UIView animateWithDuration:.2f
                                  animations:^{
-                                     topConstrait.constant = 10 - marginTop;
+                                     self.topConstrait.constant = 10 - self.marginTop;
                                      [self.superview layoutIfNeeded];
                                  }];
                 [self startAnimating];
@@ -316,11 +318,11 @@ typedef NS_ENUM(NSUInteger, PullState) {
             } else {
                 [UIView animateWithDuration:0.2
                                  animations:^{
-                                     topConstrait.constant = -50 - marginTop;
+                                     self.topConstrait.constant = -50 - self.marginTop;
                                      [self.superview layoutIfNeeded];
                                  }
                                  completion:^(BOOL finished) {
-                                     pathLayer.strokeColor = ((UIColor *)self.colors[colorIndex]).CGColor;
+                                     self.pathLayer.strokeColor = ((UIColor *)self.colors[self.colorIndex]).CGColor;
                                  }];
             }
         }
@@ -329,26 +331,26 @@ typedef NS_ENUM(NSUInteger, PullState) {
 
 - (void)scrollViewDidScroll:(CGPoint)contentOffset {
 
-    if (pullState == PullStateRefreshing)
+    if (self.pullState == PullStateRefreshing)
         return;
 
     float newY = -contentOffset.y - 50;
 
-    if (contentOffset.y - marginTop > -100) {
-        isFullyPulled = NO;
+    if (contentOffset.y - self.marginTop > -100) {
+        self.isFullyPulled = NO;
 
-        pathLayer.strokeColor = ((UIColor *)self.colors[colorIndex]).CGColor;
-        arrowLayer.strokeColor = ((UIColor *)self.colors[colorIndex]).CGColor;
+        self.pathLayer.strokeColor = ((UIColor *)self.colors[self.colorIndex]).CGColor;
+        arrowLayer.strokeColor = ((UIColor *)self.colors[self.colorIndex]).CGColor;
 
         [self updateWithPoint:contentOffset outside:NO];
 
-        if (isDragging) {
-            topConstrait.constant = newY;
+        if (self.isDragging) {
+            self.topConstrait.constant = newY;
             [self layoutIfNeeded];
         }
 
     } else {
-        isFullyPulled = YES;
+        self.isFullyPulled = YES;
 
         [self updateWithPoint:contentOffset outside:YES];
     }
@@ -356,16 +358,16 @@ typedef NS_ENUM(NSUInteger, PullState) {
 
 - (void)updateWithPoint:(CGPoint)point outside:(BOOL)flag {
 
-    CGFloat angle = -(point.y - marginTop) / 130;
+    CGFloat angle = -(point.y - self.marginTop) / 130;
 
     container.layer.transform = CATransform3DMakeRotation(angle * 10, 0, 0, 1);
 
-    if (!flag && pullState == PullStateDragging) {
+    if (!flag && self.pullState == PullStateDragging) {
         [self showView];
 
         [CATransaction begin];
         [CATransaction setDisableActions:YES];
-        pathLayer.strokeStart = 1 - angle;
+        self.pathLayer.strokeStart = 1 - angle;
         self.layer.opacity = angle * 2;
         [CATransaction commit];
     }
@@ -427,7 +429,7 @@ typedef NS_ENUM(NSUInteger, PullState) {
                                 endTailAnimation
                                 ]];
     animations.repeatCount = INFINITY;
-    [pathLayer addAnimation:animations forKey:STROKE_ANIMATION];
+    [self.pathLayer addAnimation:animations forKey:STROKE_ANIMATION];
 
     NSTimer *timer = [NSTimer timerWithTimeInterval:.5
                                              target:self
@@ -441,16 +443,16 @@ typedef NS_ENUM(NSUInteger, PullState) {
 
     [self hideArrow];
 
-    if (pullState == PullStateRefreshing) {
+    if (self.pullState == PullStateRefreshing) {
 
-        colorIndex++;
-        if (colorIndex > self.colors.count - 1) {
-            colorIndex = 0;
+        self.colorIndex++;
+        if (self.colorIndex > self.colors.count - 1) {
+            self.colorIndex = 0;
         }
 
         [CATransaction begin];
         [CATransaction setDisableActions:YES];
-        pathLayer.strokeColor = ((UIColor *)self.colors[colorIndex]).CGColor;
+        self.pathLayer.strokeColor = ((UIColor *)self.colors[self.colorIndex]).CGColor;
         [CATransaction commit];
 
         NSTimer *timer = [NSTimer timerWithTimeInterval:1.5
@@ -475,7 +477,7 @@ typedef NS_ENUM(NSUInteger, PullState) {
 
 - (void)endAnimating {
     [container.layer removeAnimationForKey:ROTATE_ANIMATION];
-    [pathLayer removeAnimationForKey:STROKE_ANIMATION];
+    [self.pathLayer removeAnimationForKey:STROKE_ANIMATION];
 }
 
 - (void)showView {
@@ -494,18 +496,18 @@ typedef NS_ENUM(NSUInteger, PullState) {
                      completion:^(BOOL finished) {
                          [self endAnimating];
 
-                         pullState = PullStateFinished;
-                         colorIndex = 0;
-                         pathLayer.strokeColor = ((UIColor *)self.colors[colorIndex]).CGColor;
+                         self.pullState = PullStateFinished;
+                         self.colorIndex = 0;
+                         self.pathLayer.strokeColor = ((UIColor *)self.colors[self.colorIndex]).CGColor;
 
-                         topConstrait.constant = -50 + marginTop;
+                         self.topConstrait.constant = -50 + self.marginTop;
                      }];
 }
 
 - (void)startRefreshing {
-    pullState = PullStateRefreshing;
+    self.pullState = PullStateRefreshing;
     self.layer.transform = CATransform3DMakeScale(0, 0, 1);
-    topConstrait.constant = 30 - marginTop;
+    self.topConstrait.constant = 30 - self.marginTop;
     [self layoutIfNeeded];
 
     [UIView animateWithDuration:.6f
@@ -513,7 +515,7 @@ typedef NS_ENUM(NSUInteger, PullState) {
                          self.layer.opacity = 1;
                          self.layer.transform = CATransform3DMakeScale(1, 1, 1);
 
-                         topConstrait.constant = 10 - marginTop;
+                         self.topConstrait.constant = 10 - self.marginTop;
                          [self layoutIfNeeded];
 
                      }
