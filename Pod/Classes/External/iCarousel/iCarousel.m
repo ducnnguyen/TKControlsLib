@@ -2072,14 +2072,14 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     NSInteger index = itemView? [self indexOfItemView:itemView]: NSNotFound;
     if (index != NSNotFound)
     {
-        if (!_delegate || [_delegate carousel:self shouldSelectItemAtIndex:index])
+        if (!_delegate || [_delegate carousel:self shouldSelectItemAtIndex:@(index)])
         {
             if ((index != self.currentItemIndex && _centerItemWhenSelected) ||
                 (index == self.currentItemIndex && _scrollToItemBoundary))
             {
                 [self scrollToItemAtIndex:index animated:YES];
             }
-            [_delegate carousel:self didSelectItemAtIndex:index];
+            [_delegate carousel:self didSelectItemAtIndex:@(index)];
         }
         else if (_scrollEnabled && _scrollToItemBoundary && _autoscroll)
         {

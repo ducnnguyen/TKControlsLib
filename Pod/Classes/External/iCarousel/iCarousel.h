@@ -188,8 +188,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)carouselWillBeginDecelerating:(iCarousel *)carousel;
 - (void)carouselDidEndDecelerating:(iCarousel *)carousel;
 
-- (BOOL)carousel:(iCarousel *)carousel shouldSelectItemAtIndex:(NSInteger)index;
-- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index;
+- (BOOL)carousel:(iCarousel *)carousel shouldSelectItemAtIndex:(NSNumber *)index;
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSNumber *)index;
 
 - (CGFloat)carouselItemWidth:(iCarousel *)carousel;
 - (CATransform3D)carousel:(iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform;
