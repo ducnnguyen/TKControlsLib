@@ -241,6 +241,8 @@ open class FloatRatingView: UIView {
 
         // Update delegate
         delegate?.floatRatingView?(self, isUpdating: rating)
+        
+        self.accessibilityValue = "\(Int64(rating.rounded()))"
     }
 
 
@@ -278,6 +280,7 @@ open class FloatRatingView: UIView {
     // MARK: Touch events
 
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         guard let touch = touches.first else {
             return
         }
@@ -285,6 +288,7 @@ open class FloatRatingView: UIView {
     }
 
     override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
         guard let touch = touches.first else {
             return
         }
@@ -292,11 +296,13 @@ open class FloatRatingView: UIView {
     }
     
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         // Update delegate
         delegate?.floatRatingView?(self, didUpdate: rating)
     }
     
     override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
         // Update delegate
         delegate?.floatRatingView?(self, didUpdate: rating)
     }
