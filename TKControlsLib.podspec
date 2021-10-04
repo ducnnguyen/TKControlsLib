@@ -30,8 +30,8 @@ Tiki App avaiable on https://itunes.apple.com/us/app/tiki-vn-niềm-vui-mua-sắ
   s.source           = { :git => 'https://github.com/ducnnguyen/TKControlsLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-  s.swift_version = '4.0'
+  s.ios.deployment_target = '10.0'
+  s.swift_version = '5.5'
 
   s.source_files = 'Pod/Classes/**/*.{h,m,swift}'
   s.resources = "Pod/**/*.{xib,bundle,xcassets}"
