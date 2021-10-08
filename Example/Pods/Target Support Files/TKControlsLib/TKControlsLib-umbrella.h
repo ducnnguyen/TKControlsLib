@@ -11,7 +11,6 @@
 #endif
 
 #import "BBBadgeBarButtonItem.h"
-#import "DropdownCell.h"
 #import "CarbonKit.h"
 #import "CarbonSwipeRefresh.h"
 #import "CarbonTabSwipeNavigation.h"
@@ -22,7 +21,6 @@
 #import "CWLateralSlideAnimator.h"
 #import "CWLateralSlideConfiguration.h"
 #import "UIViewController+CWLateralSlide.h"
-#import "DropDown.h"
 #import "FCUUID.h"
 #import "UIDevice+FCUUID.h"
 #import "iCarousel.h"
@@ -43,7 +41,6 @@
 #import "UIView+ViewController.h"
 #import "UIViewController+Popup.h"
 #import "UIWindow+TopViewController.h"
-#import "VSDropdown.h"
 
 FOUNDATION_EXPORT double TKControlsLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char TKControlsLibVersionString[];
