@@ -35,7 +35,6 @@ Tiki App avaiable on https://itunes.apple.com/us/app/tiki-vn-niềm-vui-mua-sắ
 
   s.source_files = 'Pod/Classes/**/*.{h,m,swift}'
 
-  
   s.dependency 'DTCoreText'
 
   # s.resource_bundles = {
