@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TKControlsLib'
-  s.version          = '1.1.0'
-  s.summary          = 'Move controls which using in Tki App to Cocoapod'
+  s.version          = '2.0.0'
+  s.summary          = 'Move controls which using in Tiki App to Cocoapod'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -31,11 +31,26 @@ Tiki App avaiable on https://itunes.apple.com/us/app/tiki-vn-niềm-vui-mua-sắ
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-  s.swift_version = '5.5'
+  s.swift_version = '5'
+  s.static_framework = true
+    
+  s.subspec 'Common' do |ss|
+      ss.source_files = 'Pod/Common/**/*.{h,m,swift}'
+  end
+  
+  s.subspec 'CommonControl' do |ss|
+      ss.source_files = 'Pod/CommonControl/**/*.{h,m,swift}'
+  end
+  
+  s.subspec 'CommonUI' do |ss|
+      ss.source_files = 'Pod/CommonUI/**/*.{h,m,swift}'
+      ss.dependency 'DTCoreText'
+  end
 
-  s.source_files = 'Pod/Classes/**/*.{h,m,swift}'
-
-  s.dependency 'DTCoreText'
+  
+  s.frameworks = 'UIKit'
+  s.default_subspecs = 'Common'
+  
 
   # s.resource_bundles = {
   #   'TKControlsLib' => ['TKControlsLib/Assets/*.png']
