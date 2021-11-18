@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #if TARGET_OS_IPHONE
 #import <CoreText/CoreText.h>
@@ -49,6 +50,7 @@
 #import "NSString+CSS.h"
 #import "NSString+HTML.h"
 #import "NSString+Paragraphs.h"
+#import "NSNumber+RomanNumerals.h"
 
 // parsing classes
 #import "DTHTMLParserNode.h"

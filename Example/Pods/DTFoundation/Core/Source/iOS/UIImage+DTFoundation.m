@@ -7,6 +7,11 @@
 //
 
 #import "UIImage+DTFoundation.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
+#import <UIKit/UIKit.h>
+
 #import "DTCoreGraphicsUtils.h"
 #import "DTLog.h"
 
@@ -70,6 +75,7 @@
 	NSCachedURLResponse *cacheResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	
 	__block NSData *data;
+	__block NSError *internalError;
 	
 	if (cacheResponse)
 	{
@@ -89,12 +95,12 @@
 #else
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
-    [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *responseData, NSURLResponse *response, NSError *responseError) {
-        
-        data = responseData;
-        *error = responseError;
-        dispatch_semaphore_signal(semaphore);
-    }];
+	[[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *responseData, NSURLResponse *response, NSError *responseError) {
+		
+		data = responseData;
+		internalError = responseError;
+		dispatch_semaphore_signal(semaphore);
+	}] resume];
     
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 #endif
@@ -103,6 +109,11 @@
 	{
 		DTLogError(@"Error loading image at %@", URL);
 		return nil;
+	}
+	
+	if (error)
+	{
+		*error = internalError;
 	}
 	
 	UIImage *image = [UIImage imageWithData:data];
@@ -343,3 +354,5 @@
 }
 
 @end
+
+#endif

@@ -6,6 +6,12 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import "DTCompatibility.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
+#import <UIKit/UIKit.h>
+
 #import "DTAttributedTextContentView.h"
 
 @class DTAttributedTextView;
@@ -126,3 +132,5 @@
 - (CGRect)cursorRectAtIndex:(NSInteger)index;
 
 @end
+
+#endif

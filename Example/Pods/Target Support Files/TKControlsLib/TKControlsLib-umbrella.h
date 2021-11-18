@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "BBBadgeBarButtonItem.h"
 #import "CarbonKit.h"
 #import "CarbonSwipeRefresh.h"
 #import "CarbonTabSwipeNavigation.h"
@@ -34,6 +33,7 @@
 #import "UIScrollView+TPKeyboardAvoidingAdditions.h"
 #import "UICKeyChainStore.h"
 #import "UITextView+Placeholder.h"
+#import "BBBadgeBarButtonItem.h"
 #import "NSString+Additions.h"
 #import "NSString+Extended.h"
 #import "UIScrollView+InfiniteScroll.h"

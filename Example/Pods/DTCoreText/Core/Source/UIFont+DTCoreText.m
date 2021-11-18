@@ -8,6 +8,8 @@
 
 #import "UIFont+DTCoreText.h"
 
+#if TARGET_OS_IPHONE
+
 @implementation UIFont (DTCoreText)
 
 + (UIFont *)fontWithCTFont:(CTFontRef)ctFont
@@ -27,3 +29,5 @@
 }
 
 @end
+
+#endif

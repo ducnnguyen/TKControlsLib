@@ -6,13 +6,16 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import "DTAttributedTextView.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import <QuartzCore/QuartzCore.h>
 
-#import "DTAttributedTextView.h"
 #import "DTCoreText.h"
-#import "DTBlockFunctions.h"
 
 #import <DTFoundation/DTTiledLayerWithoutFade.h>
+#import <DTFoundation/DTBlockFunctions.h>
 
 
 @interface DTAttributedTextView ()
@@ -54,18 +57,23 @@
 
 - (void)layoutSubviews
 {
-	(void)[self attributedTextContentView];
+	[super layoutSubviews];
+	
+	self.attributedTextContentView.edgeInsets = self.contentInset;
 	
 	// layout custom subviews for visible area
 	[_attributedTextContentView layoutSubviewsInRect:self.bounds];
-  
-  [super layoutSubviews];
 }
 
 - (void)awakeFromNib
 {
 	[super awakeFromNib];
 	[self _setup];
+}
+
+- (void)safeAreaInsetsDidChange
+{
+	[super safeAreaInsetsDidChange];
 }
 
 // default
@@ -130,16 +138,18 @@
 
 - (void)relayoutText
 {
+	DT_WEAK_VARIABLE typeof(self) weakSelf = self;
 	DTBlockPerformSyncIfOnMainThreadElseAsync(^{
+		DTAttributedTextView *strongSelf = weakSelf;
 		
 		// need to reset the layouter because otherwise we get the old framesetter or cached layout frames
-		_attributedTextContentView.layouter=nil;
+		strongSelf->_attributedTextContentView.layouter = nil;
 		
 		// here we're layouting the entire string, might be more efficient to only relayout the paragraphs that contain these attachments
-		[_attributedTextContentView relayoutText];
+		[strongSelf->_attributedTextContentView relayoutText];
 		
 		// layout custom subviews for visible area
-		[self setNeedsLayout];
+		[strongSelf setNeedsLayout];
 	});
 }
 
@@ -166,7 +176,9 @@
 #pragma mark Notifications
 - (void)contentViewDidLayout:(NSNotification *)notification
 {
+	DT_WEAK_VARIABLE typeof(self) weakSelf = self;
 	DTBlockPerformSyncIfOnMainThreadElseAsync(^{
+		DTAttributedTextView *strongSelf = weakSelf;
 		
 		NSDictionary *userInfo = [notification userInfo];
 		CGRect optimalFrame = [[userInfo objectForKey:@"OptimalFrame"] CGRectValue];
@@ -176,8 +188,8 @@
 		// ignore possibly delayed layout notification for a different width
 		if (optimalFrame.size.width == frame.size.width)
 		{
-			_attributedTextContentView.frame = optimalFrame;
-			self.contentSize = [_attributedTextContentView intrinsicContentSize];
+			strongSelf->_attributedTextContentView.frame = optimalFrame;
+			strongSelf.contentSize = [strongSelf->_attributedTextContentView intrinsicContentSize];
 		}
 	});
 }
@@ -237,7 +249,7 @@
 		}
 
 		// set text delegate if it was set before instantiation of content view
-		_attributedTextContentView.delegate = textDelegate;
+		_attributedTextContentView.delegate = self->_textDelegate;
 		
 		// pass on setting
 		_attributedTextContentView.shouldDrawLinks = _shouldDrawLinks;
@@ -261,7 +273,7 @@
 
 - (void)setBackgroundColor:(DTColor *)newColor
 {
-	if ([newColor alphaComponent]<1.0)
+	if ([newColor alphaComponent] < 1.0)
 	{
 		super.backgroundColor = newColor;
 		_attributedTextContentView.backgroundColor = [DTColor clearColor];
@@ -280,14 +292,14 @@
 
 - (void)setContentInset:(UIEdgeInsets)contentInset
 {
-	if (!UIEdgeInsetsEqualToEdgeInsets(self.contentInset, contentInset))
+	[super setContentInset:contentInset];
+	
+	// height does not matter, that will be determined anyhow
+	CGRect contentFrame = CGRectMake(0, 0, self.frame.size.width - self.contentInset.left - self.contentInset.right, _attributedTextContentView.frame.size.height);
+	
+	if (CGRectEqualToRect(contentFrame, self.attributedTextContentView.frame))
 	{
-		[super setContentInset:contentInset];
-		
-		// height does not matter, that will be determined anyhow
-		CGRect contentFrame = CGRectMake(0, 0, self.frame.size.width - self.contentInset.left - self.contentInset.right, _attributedTextContentView.frame.size.height);
-		
-		_attributedTextContentView.frame = contentFrame;
+		self.attributedTextContentView.frame = contentFrame;
 	}
 }
 
@@ -383,7 +395,7 @@
 - (void)setTextDelegate:(id<DTAttributedTextContentViewDelegate>)aTextDelegate
 {
 	// store unsafe pointer to delegate because we might not have a contentView yet
-	textDelegate = aTextDelegate;
+	self->_textDelegate = aTextDelegate;
 	
 	// set it if possible, otherwise it will be set in contentView lazy property
 	_attributedTextContentView.delegate = aTextDelegate;
@@ -391,7 +403,7 @@
 
 - (id<DTAttributedTextContentViewDelegate>)textDelegate
 {
-	return _attributedTextContentView.delegate;
+	return _attributedTextContentView.delegate ?: self->_textDelegate;
 }
 
 - (void)setShouldDrawLinks:(BOOL)shouldDrawLinks
@@ -413,3 +425,5 @@
 @synthesize shouldDrawLinks = _shouldDrawLinks;
 
 @end
+
+#endif

@@ -391,7 +391,7 @@ NSDictionary *_classesForNames = nil;
 		// Ignore Apple-converted-space helper CSS class
 		if ([@"class" isEqualToString:key] && [@"Apple-converted-space" isEqualToString:value]) return;
 
-		if (_CSSClassNamesToIgnoreForCustomAttributes && [key isEqualToString:@"class"])
+		if (self.CSSClassNamesToIgnoreForCustomAttributes && [key isEqualToString:@"class"])
 		{
 			NSMutableArray *classNamesToKeep = [NSMutableArray array];
 			
@@ -410,7 +410,7 @@ NSDictionary *_classesForNames = nil;
 			
 			for (NSString *oneClassName in components)
 			{
-				if (![_CSSClassNamesToIgnoreForCustomAttributes containsObject:oneClassName])
+				if (![self.CSSClassNamesToIgnoreForCustomAttributes containsObject:oneClassName])
 				{
 					[classNamesToKeep addObject:oneClassName];
 				}
@@ -760,15 +760,15 @@ NSDictionary *_classesForNames = nil;
 	{
 		if ([directionStr isEqualToString:@"rtl"])
 		{
-			_paragraphStyle.baseWritingDirection = NSWritingDirectionRightToLeft;
+			_paragraphStyle.baseWritingDirection = kCTWritingDirectionRightToLeft;
 		}
 		else if ([directionStr isEqualToString:@"ltr"])
 		{
-			_paragraphStyle.baseWritingDirection = NSWritingDirectionLeftToRight;
+			_paragraphStyle.baseWritingDirection =  kCTWritingDirectionLeftToRight;
 		}
 		else if ([directionStr isEqualToString:@"auto"])
 		{
-			_paragraphStyle.baseWritingDirection = NSWritingDirectionNatural; // that's also default
+			_paragraphStyle.baseWritingDirection = kCTWritingDirectionNatural; // that's also default
 		}
 		else
 		{
@@ -1572,15 +1572,15 @@ NSDictionary *_classesForNames = nil;
 		
 		if ([directionStr isEqualToString:@"rtl"])
 		{
-			_paragraphStyle.baseWritingDirection = NSWritingDirectionRightToLeft;
+			_paragraphStyle.baseWritingDirection = kCTWritingDirectionRightToLeft;
 		}
 		else if ([directionStr isEqualToString:@"ltr"])
 		{
-			_paragraphStyle.baseWritingDirection = NSWritingDirectionLeftToRight;
+			_paragraphStyle.baseWritingDirection = kCTWritingDirectionLeftToRight;
 		}
 		else if ([directionStr isEqualToString:@"auto"])
 		{
-			_paragraphStyle.baseWritingDirection = NSWritingDirectionNatural; // that's also default
+			_paragraphStyle.baseWritingDirection = kCTWritingDirectionNatural; // that's also default
 		}
 		else
 		{

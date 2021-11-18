@@ -6,6 +6,8 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 /**
  Methods for making HTML strings easier and quicker to handle. 
  */
@@ -78,5 +80,10 @@
  Replaces occurrences of more two or more spaces with a range of alternating non-breaking space and regular space. It also encloses these parts with a span of class 'Apple-converted-space'
  */
 - (NSString *)stringByAddingAppleConvertedSpace;
+
+/**
+Percent-encodes all characters outside the normal ASCII range
+*/
+- (NSString *)stringByEncodingNonASCIICharacters;
 
 @end

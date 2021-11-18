@@ -6,7 +6,7 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
-#import <AvailabilityMacros.h>
+#import "DTCompatibility.h"
 
 #if TARGET_OS_IPHONE
 
@@ -26,8 +26,9 @@
 
 @end
 
-#else
+#endif
 
+#if TARGET_OS_OSX
 #import <AppKit/NSColor.h>
 
 /**

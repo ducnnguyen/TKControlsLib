@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 Drobnik.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "DTCompatibility.h"
+#import "DTAccessibilityElement.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import "DTTextAttachment.h"
+#import <DTFoundation/DTWeakSupport.h>
 
 @protocol DTAccessibilityViewProxyDelegate;
 
@@ -19,7 +24,7 @@
 /**
  The delegate for the proxy
  */
-@property (nonatomic, unsafe_unretained, readonly) id<DTAccessibilityViewProxyDelegate> delegate;
+@property (nonatomic, DT_WEAK_PROPERTY, readonly) id<DTAccessibilityViewProxyDelegate> delegate;
 
 /**
  The text attachment represented by the proxy
@@ -52,3 +57,5 @@
 
 - (UIView *)viewForTextAttachment:(DTTextAttachment *)attachment proxy:(DTAccessibilityViewProxy *)proxy;
 @end
+
+#endif

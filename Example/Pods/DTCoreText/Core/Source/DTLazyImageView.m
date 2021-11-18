@@ -6,9 +6,11 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
-#import <ImageIO/ImageIO.h>
 #import "DTLazyImageView.h"
-#import "DTCompatibility.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
+#import <ImageIO/ImageIO.h>
 
 #import <DTFoundation/DTLog.h>
 
@@ -364,7 +366,10 @@ didCompleteWithError:(nullable NSError *)error
 	
 	/* For progressive download */
 	if (_imageSource)
-		CFRelease(_imageSource), _imageSource = NULL;
+	{
+		CFRelease(_imageSource);
+		_imageSource = NULL;
+	}
 	
 	CFRunLoopStop(CFRunLoopGetCurrent());
 
@@ -385,7 +390,10 @@ didCompleteWithError:(nullable NSError *)error
 	
 	/* For progressive download */
 	if (_imageSource)
-		CFRelease(_imageSource), _imageSource = NULL;
+	{
+		CFRelease(_imageSource);
+		_imageSource = NULL;
+	}
 	
 	CFRunLoopStop(CFRunLoopGetCurrent());
 
@@ -408,3 +416,5 @@ didCompleteWithError:(nullable NSError *)error
 @synthesize urlRequest = _urlRequest;
 
 @end
+
+#endif

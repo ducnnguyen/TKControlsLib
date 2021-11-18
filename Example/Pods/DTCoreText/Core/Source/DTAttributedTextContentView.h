@@ -6,6 +6,10 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import "DTCompatibility.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import "DTCoreTextLayoutFrame.h"
 #import <DTFoundation/DTWeakSupport.h>
 
@@ -362,3 +366,5 @@ typedef NSUInteger DTAttributedTextContentViewRelayoutMask;
 - (CGRect)cursorRectAtIndex:(NSInteger)index;
 
 @end
+
+#endif

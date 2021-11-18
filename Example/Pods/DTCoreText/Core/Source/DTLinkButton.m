@@ -7,6 +7,9 @@
 //
 
 #import "DTLinkButton.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import "DTCoreText.h"
 
 // constant for notification
@@ -178,3 +181,5 @@ NSString *DTLinkButtonDidHighlightNotification = @"DTLinkButtonDidHighlightNotif
 @synthesize showsTouchWhenHighlighted = _showsTouchWhenHighlighted;
 
 @end
+
+#endif

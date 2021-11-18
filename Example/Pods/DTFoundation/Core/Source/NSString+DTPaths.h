@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Cocoanetics. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 
 /** 
  A collection of useful additions for `NSString` to deal with paths.
@@ -24,7 +25,7 @@
  
  @return The path to the app's Caches folder.
  */
-+ (NSString *)cachesPath;
++ (NSString * _Nonnull)cachesPath;
 
 
 /** Determines the path to the Documents folder in the current application's sandbox.
@@ -33,7 +34,7 @@
  
  @return The path to the app's Documents folder.
  */
-+ (NSString *)documentsPath;
++ (NSString * _Nonnull)documentsPath;
 
 /**-------------------------------------------------------------------------------------
  @name Getting Temporary Paths
@@ -46,7 +47,7 @@
  
  @return The path to the app's folder for temporary files.
  */
-+ (NSString *)temporaryPath;
++ (NSString * _Nonnull)temporaryPath;
 
 
 /** Creates a unique filename that can be used for one temporary file or folder.
@@ -55,7 +56,7 @@
  
  @return The generated temporary path.
  */
-+ (NSString *)pathForTemporaryFile;
++ (NSString * _Nonnull)pathForTemporaryFile;
 
 
 /**-------------------------------------------------------------------------------------
@@ -69,7 +70,7 @@
  
  @return The incremented path
 */
-- (NSString *)pathByIncrementingSequenceNumber;
+- (NSString * _Nonnull)pathByIncrementingSequenceNumber;
 
 
 /** Removes a sequence number in brackets 
@@ -78,7 +79,7 @@
  
  @return The modified path
  */
-- (NSString *)pathByDeletingSequenceNumber;
+- (NSString * _Nonnull)pathByDeletingSequenceNumber;
 
 
 

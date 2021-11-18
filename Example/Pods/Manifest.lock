@@ -1,26 +1,30 @@
 PODS:
-  - DTCoreText (1.6.21):
-    - DTCoreText/Core (= 1.6.21)
+  - DTCoreText (1.6.26):
+    - DTCoreText/Core (= 1.6.26)
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTCoreText/Core (1.6.21):
+  - DTCoreText/Core (1.6.26):
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.12)
-  - DTFoundation/DTAnimatedGIF (1.7.12)
-  - DTFoundation/DTHTMLParser (1.7.12):
+  - DTFoundation/Core (1.7.18)
+  - DTFoundation/DTAnimatedGIF (1.7.18)
+  - DTFoundation/DTHTMLParser (1.7.18):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.12):
+  - DTFoundation/UIKit (1.7.18):
     - DTFoundation/Core
-  - TKControlsLib (1.1.0):
+  - TKControlsLib/Common (2.0.0)
+  - TKControlsLib/CommonControl (2.0.0)
+  - TKControlsLib/CommonUI (2.0.0):
     - DTCoreText
 
 DEPENDENCIES:
-  - TKControlsLib (from `../`)
+  - TKControlsLib/Common (from `../`)
+  - TKControlsLib/CommonControl (from `../`)
+  - TKControlsLib/CommonUI (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -32,10 +36,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
-  DTFoundation: 26a164ef510877387906fb92bff524a792db4bf8
-  TKControlsLib: 2f442e447cd17215919fdfaf684ed06b26f9929a
+  DTCoreText: ec749e013f2e1f76de5e7c7634642e600a7467ce
+  DTFoundation: a53f8cda2489208cbc71c648be177f902ee17536
+  TKControlsLib: 5c294b468e93126b387689500ea4f03338dc34f2
 
-PODFILE CHECKSUM: 343962f6dd8db6d01c1be07b66c46b96a740cae9
+PODFILE CHECKSUM: 87719e21faa19a2e3e42cf8efbb8a0abdf0c08dc
 
 COCOAPODS: 1.11.2

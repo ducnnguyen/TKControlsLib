@@ -6,8 +6,13 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
-#import "DTCoreText.h"
+#import "DTCompatibility.h"
+
 #import "DTAttributedTextCell.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
+#import "DTCoreText.h"
 #import "DTCSSStylesheet.h"
 
 #import <DTFoundation/DTLog.h>
@@ -267,3 +272,5 @@
 @synthesize textDelegate = _textDelegate;
 
 @end
+
+#endif

@@ -6,14 +6,20 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import "DTCompatibility.h"
+#import "DTCoreTextConstants.h"
 
-#if TARGET_OS_IPHONE
+
 #import <CoreText/CoreText.h>
-#elif TARGET_OS_MAC
-#import <ApplicationServices/ApplicationServices.h>
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+#import <UIKit/UIKit.h>
 #endif
 
-#import "DTCoreTextConstants.h"
+#if TARGET_OS_OSX
+#import <AppKit/AppKit.h>
+#import <ApplicationServices/ApplicationServices.h>
+#endif
 
 @class DTCoreTextLayoutLine;
 @class DTTextBlock;

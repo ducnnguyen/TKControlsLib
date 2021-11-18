@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Drobnik.com. All rights reserved.
 //
 
+#import "DTCompatibility.h"
+
 @class DTCSSListStyle;
 @class DTTextBlock;
 

@@ -6,6 +6,10 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import "DTCompatibility.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import <DTFoundation/DTWeakSupport.h>
 #import "DTAttributedTextContentView.h"
 
@@ -79,3 +83,5 @@ extern NSString * const DTLazyImageViewDidFinishDownloadNotification;
 - (void)cancelLoading;
 
 @end
+
+#endif

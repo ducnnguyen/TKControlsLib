@@ -7,6 +7,9 @@
 //
 
 #import "DTAttributedLabel.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import "DTCoreTextLayoutFrame.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -37,6 +40,19 @@
 	
 	return self;
 }
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self != nil)
+    {
+        [self setupAttributedLabel];
+    }
+
+    return self;
+}
+
+
 
 - (void) awakeFromNib
 {
@@ -105,3 +121,5 @@
 
 
 @end
+
+#endif

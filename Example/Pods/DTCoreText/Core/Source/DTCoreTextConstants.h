@@ -1,3 +1,5 @@
+#import "DTCompatibility.h"
+
 // unicode characters
 
 #define UNICODE_OBJECT_PLACEHOLDER @"\ufffc"

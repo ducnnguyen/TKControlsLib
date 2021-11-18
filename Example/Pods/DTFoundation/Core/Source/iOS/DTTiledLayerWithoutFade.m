@@ -8,6 +8,10 @@
 
 #import "DTTiledLayerWithoutFade.h"
 
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
+#import <UIKit/UIKit.h>
+
 @implementation DTTiledLayerWithoutFade
 
 + (CFTimeInterval)fadeDuration
@@ -15,4 +19,11 @@
 	return 0;
 }
 
++ (BOOL)shouldDrawOnMainThread
+{
+    return YES;
+}
+
 @end
+
+#endif

@@ -8,6 +8,8 @@
 
 #import "DTDictationPlaceholderView.h"
 
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 // if you change any of these then also make sure to adjust the sizes in DTDictationPlaceholderTextAttachment
 #define DOT_WIDTH 10.0f
 #define DOT_DISTANCE 2.5f
@@ -55,7 +57,8 @@
 {
     [super willMoveToSuperview:newSuperview];
   
-    [_phaseTimer invalidate], _phaseTimer = nil;
+	[_phaseTimer invalidate];
+	_phaseTimer = nil;
     
     if (newSuperview)
     {
@@ -116,3 +119,5 @@
 
 
 @end
+
+#endif

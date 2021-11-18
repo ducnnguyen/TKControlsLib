@@ -5,10 +5,16 @@
 //  Created by Oliver Letterer on 09.04.12.
 //  Copyright (c) 2012 Drobnik.com. All rights reserved.
 //
+#import <Availability.h>
+#import <TargetConditionals.h>
+
+#import <Foundation/Foundation.h>
 
 #pragma mark - iOS
 
 #if TARGET_OS_IPHONE
+
+#import <UIKit/UIKit.h>
 
 	// Compatibility Aliases
 	#define DTColor UIColor
@@ -87,6 +93,9 @@
 
 
 #if !TARGET_OS_IPHONE
+
+
+#import <AppKit/AppKit.h>
 
 	// Compatibility Aliases
 	#define DTColor NSColor

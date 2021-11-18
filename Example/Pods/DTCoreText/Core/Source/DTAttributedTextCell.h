@@ -6,6 +6,12 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import "DTCompatibility.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
+#import <UIKit/UIKit.h>
+
 #import "DTAttributedTextContentView.h"
 #import <DTFoundation/DTWeakSupport.h>
 
@@ -83,3 +89,5 @@
 @property (nonatomic, readonly) DTAttributedTextContentView *attributedTextContextView;
 
 @end
+
+#endif

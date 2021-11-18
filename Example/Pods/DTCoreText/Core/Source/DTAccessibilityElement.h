@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Drobnik.com. All rights reserved.
 //
 
+#import "DTCompatibility.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import <UIKit/UIKit.h>
 
 /**
@@ -30,3 +34,5 @@
 - (id)initWithParentView:(UIView *)parentView;
 
 @end
+
+#endif

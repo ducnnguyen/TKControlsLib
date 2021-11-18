@@ -7,7 +7,7 @@
 //
 
 #import "DTTextAttachment.h"
-#import "DTCoreGraphicsUtils.h"
+
 #import "DTHTMLElement.h"
 #import "DTDictationPlaceholderTextAttachment.h"
 #import "DTIframeTextAttachment.h"
@@ -17,6 +17,7 @@
 #import "NSCoder+DTCompatibility.h"
 
 #import <DTFoundation/DTLog.h>
+#import <DTFoundation/DTCoreGraphicsUtils.h>
 
 
 static NSMutableDictionary *_classForTagNameLookup = nil;

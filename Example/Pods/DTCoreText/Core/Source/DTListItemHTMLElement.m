@@ -7,6 +7,8 @@
 //
 
 #import "DTListItemHTMLElement.h"
+
+#import "DTCompatibility.h"
 #import "DTCoreTextParagraphStyle.h"
 #import "DTCoreTextFontDescriptor.h"
 #import "NSDictionary+DTCoreText.h"
@@ -251,6 +253,11 @@
 			
 			prefix = [effectiveList prefixWithCounter:listCounter];
 		}
+	}
+	
+	if (!prefix)
+	{
+		return nil;
 	}
 	
 	NSMutableAttributedString *tmpStr = [[NSMutableAttributedString alloc] initWithString:prefix attributes:newAttributes];

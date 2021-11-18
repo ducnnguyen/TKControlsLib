@@ -7,9 +7,7 @@
 //
 
 #import "TKViewController.h"
-#import <TKControlsLib/UIViewController+Popup.h>
-#import <TKControlsLib/UIView+ViewController.h>
-
+@import TKControlsLib;
 @interface TKViewController ()
 
 @end
@@ -19,6 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog([[UIDevice currentDevice] readableModel]);
+    NSLog([UIApplication userAgentWithAppName:@"TIki"]);
+    BBBadgeBarButtonItem *item = [[BBBadgeBarButtonItem alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -6,7 +6,10 @@
 //  Copyright (c) 2013 Drobnik.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "DTCompatibility.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import "DTAccessibilityElement.h"
 
 @class DTCoreTextLayoutFrame, DTTextAttachment;
@@ -32,3 +35,5 @@ typedef id(^DTAttachmentViewProvider)(DTTextAttachment *textAttachment);
 - (NSArray *)accessibilityElementsForLayoutFrame:(DTCoreTextLayoutFrame *)frame view:(UIView *)view attachmentViewProvider:(DTAttachmentViewProvider)block;
 
 @end
+
+#endif

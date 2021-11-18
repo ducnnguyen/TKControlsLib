@@ -6,15 +6,19 @@
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
 
+#import "DTAttributedTextContentView.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import <QuartzCore/QuartzCore.h>
 
 #import "DTCoreText.h"
-#import "DTAttributedTextContentView.h"
 #import "DTDictationPlaceholderTextAttachment.h"
 #import "DTAccessibilityViewProxy.h"
 #import "DTAccessibilityElement.h"
 #import "DTCoreTextLayoutFrameAccessibilityElementGenerator.h"
-#import "DTBlockFunctions.h"
+
+#import <DTFoundation/DTBlockFunctions.h>
 
 #if !__has_feature(objc_arc)
 #error THIS CODE MUST BE COMPILED WITH ARC ENABLED!
@@ -503,18 +507,19 @@ static Class _layerClassToUseForDTAttributedTextContentView = nil;
 
 - (void)relayoutText
 {
+	DT_WEAK_VARIABLE typeof(self) weakSelf = self;
 	DTBlockPerformSyncIfOnMainThreadElseAsync(^{
-
+		DTAttributedTextContentView *strongSelf = weakSelf;
 		// Make sure we actually have a superview and a previous layout before attempting to relayout the text.
-		if (_layoutFrame && self.superview)
+		if (strongSelf->_layoutFrame && strongSelf.superview)
 		{
 			// need new layout frame, layouter can remain because the attributed string is probably the same
-			self.layoutFrame = nil;
+			strongSelf.layoutFrame = nil;
 			
 			// remove all links because they might have merged or split
-			[self removeAllCustomViewsForLinks];
+			[strongSelf removeAllCustomViewsForLinks];
 			
-			if (_attributedString)
+			if (strongSelf->_attributedString)
 			{
 				// triggers new layout
 				CGSize neededSize = [self intrinsicContentSize];
@@ -525,12 +530,12 @@ static Class _layerClassToUseForDTAttributedTextContentView = nil;
 				[[NSNotificationCenter defaultCenter] postNotificationName:DTAttributedTextContentViewDidFinishLayoutNotification object:self userInfo:userInfo];
 			}
 			
-			[self setNeedsLayout];
-			[self setNeedsDisplayInRect:self.bounds];
+			[strongSelf setNeedsLayout];
+			[strongSelf setNeedsDisplayInRect:self.bounds];
 			
-			if ([self respondsToSelector:@selector(invalidateIntrinsicContentSize)])
+			if ([strongSelf respondsToSelector:@selector(invalidateIntrinsicContentSize)])
 			{
-            [self invalidateIntrinsicContentSize];
+            	[strongSelf invalidateIntrinsicContentSize];
 			}
 		}
 	});
@@ -1107,3 +1112,5 @@ static Class _layerClassToUseForDTAttributedTextContentView = nil;
 }
 
 @end
+
+#endif

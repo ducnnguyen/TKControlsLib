@@ -8,6 +8,8 @@
 
 #import "DTAccessibilityViewProxy.h"
 
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 @implementation DTAccessibilityViewProxy
 
 - (id)initWithTextAttachment:(DTTextAttachment *)textAttachment delegate:(id<DTAccessibilityViewProxyDelegate>)delegate
@@ -56,3 +58,5 @@
 }
 
 @end
+
+#endif
