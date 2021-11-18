@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TKControlsLib'
-  s.version          = '2.0.0'
+  s.version          = '2.0.0b'
   s.summary          = 'Move controls which using in Tiki App to Cocoapod'
 
 # This description is used to generate tags and improve search results.
