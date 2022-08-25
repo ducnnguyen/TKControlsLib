@@ -184,26 +184,51 @@
                                     withExpandText:(NSString *)expandText {
     NSString *result = [text copy];
     result = [result stringByReplacingOccurrencesOfString:@"\n" withString:@" \n"];
-    if (!font) font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    if (!font) {
+        font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    }
     CGSize maxSize = CGSizeMake(rect.size.width  - (inset * 2), FLT_MAX);
-    CGRect boundingRect = [result boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, } context:nil];
-    CGSize size = boundingRect.size;
-    NSRange range;
-    if (rect.size.height < size.height)
-    while (rect.size.height < size.height) {
-        range = [result rangeOfString:@" "
-                              options:NSBackwardsSearch];
-        if (range.location != NSNotFound && range.location > 0 ) {
-            result = [result substringToIndex:range.location];
-        } else {
-            result = [result substringToIndex:result.length - 1];
+    CGSize size = [result sizeWithFont:font maxSize:maxSize];
+    if (rect.size.height < size.height) {
+        NSString *tempString = result;
+        CGSize tempSize = size;
+        while (tempSize.height >= rect.size.height) {
+            NSString *halfString = [tempString halfString];
+            tempSize = [halfString sizeWithFont:font maxSize:maxSize];
+            if (tempSize.height <= rect.size.height) {
+                result = tempString;
+                break;
+            } else {
+                tempString = halfString;
+            }
         }
-        NSString *temp = [result copy];
-        temp = [temp stringByAppendingString:expandText];
-        if (!font) font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-        CGRect boundingRect = [temp boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, } context:nil];
-        size = boundingRect.size;
+        while (rect.size.height < size.height) {
+            NSRange range = [result rangeOfString:@" "
+                                  options:NSBackwardsSearch];
+            if (range.location != NSNotFound && range.location > 0 ) {
+                result = [result substringToIndex:range.location];
+            } else {
+                result = [result substringToIndex:result.length - 1];
+            }
+            NSString *temp = [result copy];
+            temp = [temp stringByAppendingString:expandText];
+            size = [temp sizeWithFont:font maxSize:maxSize];
+        }
     }
     return result;
 }
+
+- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize {
+    if (!font) {
+        font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    }
+    CGRect boundingRect = [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font } context:nil];
+    return boundingRect.size;
+}
+
+- (NSString*)halfString {
+    NSUInteger halftLength = [self length] / 2;
+    return [self substringToIndex:halftLength];
+}
+
 @end
